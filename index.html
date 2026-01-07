@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Practice Platform - Wireframes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .screen-container {
+            display: none;
+        }
+        .screen-container.active {
+            display: block;
+        }
+        .nav-btn {
+            transition: all 0.2s;
+        }
+        .nav-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <div class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between mb-3">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">IB Practice Platform</h1>
+                    <p class="text-sm text-gray-500">Interactive Wireframes</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="changeRole('admin')" class="nav-btn role-btn px-4 py-2 rounded-lg text-sm font-medium bg-gray-100 hover:bg-gray-200" data-role="admin">
+                        Admin View
+                    </button>
+                    <button onclick="changeRole('mentor')" class="nav-btn role-btn px-4 py-2 rounded-lg text-sm font-medium bg-gray-100 hover:bg-gray-200" data-role="mentor">
+                        Mentor View
+                    </button>
+                    <button onclick="changeRole('student')" class="nav-btn role-btn active px-4 py-2 rounded-lg text-sm font-medium" data-role="student">
+                        Student View
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Screen Navigation -->
+            <div id="screenNav" class="flex gap-2 overflow-x-auto pb-2"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto p-6">
+        <!-- STUDENT SCREENS -->
+        <div id="student-dashboard" class="screen-container active">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-t-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">Welcome back, Alex!</h2>
+                            <p class="text-blue-100 mt-1">Ready to practice today?</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="p-2 bg-white/20 rounded-lg hover:bg-white/30">
+                                <i data-lucide="bell" class="w-5 h-5"></i>
+                            </button>
+                            <button class="p-2 bg-white/20 rounded-lg hover:bg-white/30">
+                                <i data-lucide="user" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-4 gap-4 mb-6">
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-green-700 font-medium">Daily Streak</span>
+                                <i data-lucide="flame" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-green-900">12</p>
+                            <p class="text-xs text-green-600 mt-1">Keep it up! 🎉</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-blue-700 font-medium">Questions Solved</span>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-blue-900">247</p>
+                            <p class="text-xs text-blue-600 mt-1">+15 this week</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-purple-700 font-medium">Avg Accuracy</span>
+                                <i data-lucide="target" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-purple-900">78%</p>
+                            <p class="text-xs text-purple-600 mt-1">↑ 5% from last week</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-lg border border-orange-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-orange-700 font-medium">Mock Exams</span>
+                                <i data-lucide="file-text" class="w-5 h-5 text-orange-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-orange-900">3</p>
+                            <p class="text-xs text-orange-600 mt-1">2 pending</p>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Grid -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <!-- Left Column -->
+                        <div class="col-span-2 space-y-6">
+                            <!-- Continue Learning -->
+                            <div>
+                                <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                                    <i data-lucide="play-circle" class="w-5 h-5 text-blue-600"></i>
+                                    Continue Learning
+                                </h3>
+                                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-5 rounded-lg shadow-sm">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div>
+                                            <p class="text-sm opacity-90">Chemistry HL</p>
+                                            <p class="text-xl font-bold">Organic Chemistry</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-2xl font-bold">45%</p>
+                                            <p class="text-xs opacity-90">Complete</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full bg-white/20 rounded-full h-2 mb-4">
+                                        <div class="bg-white h-2 rounded-full" style="width: 45%"></div>
+                                    </div>
+                                    <button class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition">
+                                        Resume Practice →
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- My Subjects -->
+                            <div>
+                                <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                                    <i data-lucide="book-open" class="w-5 h-5 text-blue-600"></i>
+                                    My Subjects
+                                </h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-900">Mathematics HL</h4>
+                                                <p class="text-xs text-gray-500">12 Topics</p>
+                                            </div>
+                                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">78%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2">
+                                            <div class="bg-green-500 h-1.5 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                        <p class="text-xs text-gray-600">156 questions completed</p>
+                                    </div>
+                                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-900">Physics HL</h4>
+                                                <p class="text-xs text-gray-500">10 Topics</p>
+                                            </div>
+                                            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">65%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2">
+                                            <div class="bg-blue-500 h-1.5 rounded-full" style="width: 65%"></div>
+                                        </div>
+                                        <p class="text-xs text-gray-600">89 questions completed</p>
+                                    </div>
+                                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
+                                        <div class="flex items-start justify-between mb-3">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-900">Chemistry HL</h4>
+                                                <p class="text-xs text-gray-500">11 Topics</p>
+                                            </div>
+                                            <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">45%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2">
+                                            <div class="bg-yellow-500 h-1.5 rounded-full" style="width: 45%"></div>
+                                        </div>
+                                        <p class="text-xs text-gray-600">67 questions completed</p>
+                                    </div>
+                                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 hover:border-blue-400 transition cursor-pointer flex items-center justify-center">
+                                        <div class="text-center">
+                                            <i data-lucide="plus-circle" class="w-8 h-8 text-gray-400 mx-auto mb-2"></i>
+                                            <p class="text-sm text-gray-600 font-medium">Request Subject</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="space-y-6">
+                            <!-- Upcoming Mock Exams -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h3 class="font-semibold mb-3 flex items-center gap-2">
+                                    <i data-lucide="calendar" class="w-5 h-5 text-blue-600"></i>
+                                    Upcoming Mock Exams
+                                </h3>
+                                <div class="space-y-3">
+                                    <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+                                        <p class="text-sm font-semibold text-red-900">Physics Paper 2</p>
+                                        <p class="text-xs text-red-700 mt-1">Due in 2 days</p>
+                                        <button class="mt-2 w-full bg-red-600 text-white text-xs py-1.5 rounded hover:bg-red-700">
+                                            Start Now
+                                        </button>
+                                    </div>
+                                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                        <p class="text-sm font-semibold text-gray-900">Math Paper 1</p>
+                                        <p class="text-xs text-gray-600 mt-1">Due in 5 days</p>
+                                        <button class="mt-2 w-full bg-gray-200 text-gray-700 text-xs py-1.5 rounded hover:bg-gray-300">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Weak Areas -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h3 class="font-semibold mb-3 flex items-center gap-2">
+                                    <i data-lucide="alert-circle" class="w-5 h-5 text-orange-600"></i>
+                                    Areas to Improve
+                                </h3>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between p-2 bg-orange-50 rounded">
+                                        <span class="text-sm text-gray-700">Calculus - Integration</span>
+                                        <span class="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded-full">42%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-2 bg-orange-50 rounded">
+                                        <span class="text-sm text-gray-700">Organic Reactions</span>
+                                        <span class="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded-full">38%</span>
+                                    </div>
+                                    <button class="w-full mt-2 text-sm text-blue-600 font-medium hover:text-blue-700">
+                                        Practice Weak Areas →
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Recent Feedback -->
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h3 class="font-semibold mb-3 flex items-center gap-2">
+                                    <i data-lucide="message-square" class="w-5 h-5 text-blue-600"></i>
+                                    Recent Feedback
+                                </h3>
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <div class="flex items-start gap-2">
+                                        <div class="bg-blue-200 rounded-full w-8 h-8 flex items-center justify-center text-xs font-bold text-blue-700">
+                                            MR
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-xs font-medium text-gray-900">Mr. Roberts</p>
+                                            <p class="text-xs text-gray-600 mt-1">Great progress on Physics! Focus more on vector problems.</p>
+                                            <p class="text-xs text-gray-400 mt-1">2 hours ago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STUDENT PRACTICE SCREEN -->
+        <div id="student-practice" class="screen-container">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <!-- Practice Header -->
+                <div class="border-b px-6 py-4 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <button class="p-2 hover:bg-gray-100 rounded-lg">
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                        </button>
+                        <div>
+                            <h2 class="font-semibold text-gray-900">Chemistry HL - Organic Chemistry</h2>
+                            <p class="text-sm text-gray-500">Timed Practice Mode</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-right">
+                            <p class="text-sm text-gray-500">Time Remaining</p>
+                            <p class="text-2xl font-bold text-blue-600">15:43</p>
+                        </div>
+                        <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                            End Practice
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <!-- Progress Bar -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-gray-600">Question 7 of 15</span>
+                            <span class="text-sm text-gray-600">47% Complete</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full transition-all" style="width: 47%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question -->
+                    <div class="max-w-4xl mx-auto">
+                        <div class="mb-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">IB 2022</span>
+                                <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full font-medium">Paper 2</span>
+                                <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Medium</span>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                                <p class="text-gray-900 leading-relaxed mb-4">
+                                    <strong>Question 7:</strong> Consider the following reaction mechanism:
+                                </p>
+                                <div class="bg-white p-4 rounded border border-gray-300 font-mono text-sm mb-4">
+                                    Step 1: A + B → C (slow)<br>
+                                    Step 2: C + D → E (fast)
+                                </div>
+                                <p class="text-gray-900 leading-relaxed">
+                                    a) Identify the rate-determining step and explain your reasoning. <strong>[2 marks]</strong><br>
+                                    b) Write the overall rate law for this reaction. <strong>[2 marks]</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Answer Section -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Answer:</label>
+                            <textarea 
+                                class="w-full h-48 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                placeholder="Type your answer here..."
+                            >a) The rate-determining step is Step 1 (A + B → C) because it is marked as "slow"...</textarea>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center gap-2">
+                                    <i data-lucide="flag" class="w-4 h-4"></i>
+                                    Flag for Review
+                                </button>
+                                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 flex items-center gap-2">
+                                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                                    Save & Exit
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                    ← Previous
+                                </button>
+                                <button class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                    Submit & Next →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Question Navigator -->
+                        <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="text-sm font-medium text-gray-700 mb-3">Question Navigator</p>
+                            <div class="grid grid-cols-15 gap-2">
+                                <button class="w-10 h-10 bg-green-500 text-white rounded font-semibold hover:bg-green-600">1</button>
+                                <button class="w-10 h-10 bg-green-500 text-white rounded font-semibold hover:bg-green-600">2</button>
+                                <button class="w-10 h-10 bg-green-500 text-white rounded font-semibold hover:bg-green-600">3</button>
+                                <button class="w-10 h-10 bg-green-500 text-white rounded font-semibold hover:bg-green-600">4</button>
+                                <button class="w-10 h-10 bg-green-500 text-white rounded font-semibold hover:bg-green-600">5</button>
+                                <button class="w-10 h-10 bg-green-500 text-white rounded font-semibold hover:bg-green-600">6</button>
+                                <button class="w-10 h-10 bg-blue-600 text-white rounded font-semibold ring-2 ring-blue-400">7</button>
+                                <button class="w-10 h-10 bg-white border-2 border-gray-300 rounded font-semibold hover:bg-gray-50">8</button>
+                                <button class="w-10 h-10 bg-white border-2 border-gray-300 rounded font-semibold hover:bg-gray-50">9</button>
+                                <button class="w-10 h-10 bg-white border-2 border-gray-300 rounded font-semibold hover:bg-gray-50">10</button>
+                                <button class="w-10 h-10 bg-orange-400 text-white rounded font-semibold hover:bg-orange-500">11</button>
+                                <button class="w-10 h-10 bg-white border-2 border-gray-300 rounded font-semibold hover:bg-gray-50">12</button>
+                                <button class="w-10 h-10 bg-white border-2 border-gray-300 rounded font-semibold hover:bg-gray-50">13</button>
+                                <button class="w-10 h-10 bg-white border-2 border-gray-300 rounded font-semibold hover:bg-gray-50">14</button>
+                                <button class="w-10 h-10 bg-white border-2 border-gray-300 rounded font-semibold hover:bg-gray-50">15</button>
+                            </div>
+                            <div class="flex gap-4 mt-3 text-xs text-gray-600">
+                                <span><span class="inline-block w-3 h-3 bg-green-500 rounded mr-1"></span> Answered</span>
+                                <span><span class="inline-block w-3 h-3 bg-blue-600 rounded mr-1"></span> Current</span>
+                                <span><span class="inline-block w-3 h-3 bg-orange-400 rounded mr-1"></span> Flagged</span>
+                                <span><span class="inline-block w-3 h-3 bg-white border-2 border-gray-300 rounded mr-1"></span> Not Answered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENTOR DASHBOARD -->
+        <div id="mentor-dashboard" class="screen-container">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6 rounded-t-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">Mentor Dashboard</h2>
+                            <p class="text-purple-100 mt-1">Track student progress and provide guidance</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="px-4 py-2 bg-white text-purple-600 rounded-lg hover:bg-purple-50 font-medium">
+                                + Add Content
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-4 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-blue-700 font-medium">Active Students</span>
+                                <i data-lucide="users" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-blue-900">12</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-green-700 font-medium">Avg Performance</span>
+                                <i data-lucide="trending-up" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-green-900">72%</p>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-orange-700 font-medium">Flagged Questions</span>
+                                <i data-lucide="alert-circle" class="w-5 h-5 text-orange-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-orange-900">8</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-purple-700 font-medium">Content Added</span>
+                                <i data-lucide="file-plus" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-purple-900">45</p>
+                        </div>
+                    </div>
+
+                    <!-- Students Table -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold">My Students</h3>
+                            <div class="flex gap-2">
+                                <input type="text" placeholder="Search students..." class="px-4 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-purple-500">
+                                <select class="px-4 py-2 border rounded-lg text-sm">
+                                    <option>All Subjects</option>
+                                    <option>Mathematics HL</option>
+                                    <option>Physics HL</option>
+                                    <option>Chemistry HL</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Student</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Subjects</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Progress</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Last Active</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Performance</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                                    AJ
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-gray-900">Alex Johnson</p>
+                                                    <p class="text-xs text-gray-500">alex.j@email.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">Math HL</span>
+                                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Physics HL</span>
+                                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full">Chem HL</span>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-green-500 h-2 rounded-full" style="width: 68%"></div>
+                                            </div>
+                                            <p class="text-xs text-gray-600 mt-1">68% complete</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">2 hours ago</p>
+                                            <p class="text-xs text-gray-500">Daily streak: 12</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full font-medium">78%</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <button class="text-purple-600 hover:text-purple-700 font-medium text-sm">View Details →</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                                    SM
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-gray-900">Sarah Miller</p>
+                                                    <p class="text-xs text-gray-500">sarah.m@email.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">Math HL</span>
+                                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full">Chem HL</span>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 45%"></div>
+                                            </div>
+                                            <p class="text-xs text-gray-600 mt-1">45% complete</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">Yesterday</p>
+                                            <p class="text-xs text-gray-500">Daily streak: 5</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-yellow-100 text-yellow-700 text-sm px-3 py-1 rounded-full font-medium">65%</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <button class="text-purple-600 hover:text-purple-700 font-medium text-sm">View Details →</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50 bg-red-50">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                                    DL
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-gray-900">David Lee</p>
+                                                    <p class="text-xs text-gray-500">david.l@email.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Physics HL</span>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-red-500 h-2 rounded-full" style="width: 28%"></div>
+                                            </div>
+                                            <p class="text-xs text-gray-600 mt-1">28% complete</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-red-600">5 days ago</p>
+                                            <p class="text-xs text-red-500">Needs attention</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full font-medium">42%</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <button class="text-purple-600 hover:text-purple-700 font-medium text-sm">View Details →</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold mb-4 flex items-center gap-2">
+                                <i data-lucide="flag" class="w-5 h-5 text-orange-600"></i>
+                                Flagged Questions (8)
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="bg-orange-50 border border-orange-200 rounded-lg p-3">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <p class="text-sm font-medium">Alex Johnson</p>
+                                            <p class="text-xs text-gray-600">Chemistry HL - Question 15</p>
+                                        </div>
+                                        <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Urgent</span>
+                                    </div>
+                                    <p class="text-xs text-gray-700 mb-2">"I don't understand why the answer is C..."</p>
+                                    <button class="text-xs text-purple-600 font-medium hover:text-purple-700">Respond →</button>
+                                </div>
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <p class="text-sm font-medium">Sarah Miller</p>
+                                            <p class="text-xs text-gray-600">Math HL - Question 8</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-gray-700 mb-2">"Can you explain the integration step?"</p>
+                                    <button class="text-xs text-purple-600 font-medium hover:text-purple-700">Respond →</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold mb-4 flex items-center gap-2">
+                                <i data-lucide="activity" class="w-5 h-5 text-blue-600"></i>
+                                Recent Activity
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <p class="text-sm text-gray-900"><strong>Alex Johnson</strong> completed Mock Exam - Physics Paper 1</p>
+                                        <p class="text-xs text-gray-500">2 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <p class="text-sm text-gray-900"><strong>Sarah Miller</strong> started practicing Organic Chemistry</p>
+                                        <p class="text-xs text-gray-500">5 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <p class="text-sm text-gray-900">You added 5 new questions to <strong>Calculus</strong></p>
+                                        <p class="text-xs text-gray-500">Yesterday</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMIN DASHBOARD -->
+        <div id="admin-dashboard" class="screen-container">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-6 rounded-t-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">Admin Dashboard</h2>
+                            <p class="text-gray-300 mt-1">Platform Overview & Management</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 font-medium">
+                                + Add User
+                            </button>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium">
+                                + Upload Content
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <!-- Platform Stats -->
+                    <div class="grid grid-cols-5 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-blue-700 font-medium">Total Students</span>
+                                <i data-lucide="users" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-blue-900">156</p>
+                            <p class="text-xs text-blue-600 mt-1">↑ 12 this month</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-purple-700 font-medium">Active Mentors</span>
+                                <i data-lucide="user-check" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-purple-900">18</p>
+                            <p class="text-xs text-purple-600 mt-1">All active</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-green-700 font-medium">Questions Bank</span>
+                                <i data-lucide="database" class="w-5 h-5 text-green-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-green-900">2,847</p>
+                            <p class="text-xs text-green-600 mt-1">↑ 234 this month</p>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-orange-700 font-medium">Pending Approvals</span>
+                                <i data-lucide="clock" class="w-5 h-5 text-orange-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-orange-900">23</p>
+                            <p class="text-xs text-orange-600 mt-1">Needs review</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-red-700 font-medium">Active Sessions</span>
+                                <i data-lucide="activity" class="w-5 h-5 text-red-600"></i>
+                            </div>
+                            <p class="text-3xl font-bold text-red-900">47</p>
+                            <p class="text-xs text-red-600 mt-1">Right now</p>
+                        </div>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="border-b mb-6">
+                        <div class="flex gap-4">
+                            <button class="px-4 py-2 border-b-2 border-gray-900 font-medium text-gray-900">Users</button>
+                            <button class="px-4 py-2 text-gray-500 hover:text-gray-900">Content Library</button>
+                            <button class="px-4 py-2 text-gray-500 hover:text-gray-900">Analytics</button>
+                            <button class="px-4 py-2 text-gray-500 hover:text-gray-900">Settings</button>
+                        </div>
+                    </div>
+
+                    <!-- User Management Table -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold">User Management</h3>
+                            <div class="flex gap-2">
+                                <input type="text" placeholder="Search users..." class="px-4 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-gray-500">
+                                <select class="px-4 py-2 border rounded-lg text-sm">
+                                    <option>All Roles</option>
+                                    <option>Students</option>
+                                    <option>Mentors</option>
+                                    <option>Admins</option>
+                                </select>
+                                <select class="px-4 py-2 border rounded-lg text-sm">
+                                    <option>All Status</option>
+                                    <option>Active</option>
+                                    <option>Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">User</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Role</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Assigned To</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Status</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Last Active</th>
+                                        <th class="text-left p-4 text-sm font-semibold text-gray-700">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                                    MR
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-gray-900">Michael Roberts</p>
+                                                    <p class="text-xs text-gray-500">m.roberts@ascendnow.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full font-medium">Mentor</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">12 Students</p>
+                                            <p class="text-xs text-gray-500">Math, Physics, Chemistry</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">Active</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">2 hours ago</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex gap-2">
+                                                <button class="text-blue-600 hover:text-blue-700">
+                                                    <i data-lucide="edit" class="w-4 h-4"></i>
+                                                </button>
+                                                <button class="text-gray-600 hover:text-gray-700">
+                                                    <i data-lucide="more-vertical" class="w-4 h-4"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                                    AJ
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-gray-900">Alex Johnson</p>
+                                                    <p class="text-xs text-gray-500">alex.j@email.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">Student</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">Michael Roberts</p>
+                                            <p class="text-xs text-gray-500">3 Subjects</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">Active</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">1 hour ago</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex gap-2">
+                                                <button class="text-blue-600 hover:text-blue-700">
+                                                    <i data-lucide="edit" class="w-4 h-4"></i>
+                                                </button>
+                                                <button class="text-gray-600 hover:text-gray-700">
+                                                    <i data-lucide="more-vertical" class="w-4 h-4"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                                    SM
+                                                </div>
+                                                <div>
+                                                    <p class="font-medium text-gray-900">Sarah Miller</p>
+                                                    <p class="text-xs text-gray-500">sarah.m@email.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">Student</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">Michael Roberts</p>
+                                            <p class="text-xs text-gray-500">2 Subjects</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">Active</span>
+                                        </td>
+                                        <td class="p-4">
+                                            <p class="text-sm text-gray-900">Yesterday</p>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex gap-2">
+                                                <button class="text-blue-600 hover:text-blue-700">
+                                                    <i data-lucide="edit" class="w-4 h-4"></i>
+                                                </button>
+                                                <button class="text-gray-600 hover:text-gray-700">
+                                                    <i data-lucide="more-vertical" class="w-4 h-4"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions & Pending Items -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold mb-4 flex items-center gap-2">
+                                <i data-lucide="alert-circle" class="w-5 h-5 text-orange-600"></i>
+                                Pending Approvals (23)
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="bg-orange-50 border border-orange-200 rounded-lg p-3">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <p class="text-sm font-medium">Question Submission</p>
+                                            <p class="text-xs text-gray-600">Michael Roberts - Chemistry HL</p>
+                                        </div>
+                                        <span class="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded-full">Pending</span>
+                                    </div>
+                                    <p class="text-xs text-gray-700 mb-2">5 new questions added to Organic Chemistry</p>
+                                    <div class="flex gap-2">
+                                        <button class="text-xs bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">Approve</button>
+                                        <button class="text-xs bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">Reject</button>
+                                        <button class="text-xs text-blue-600 hover:text-blue-700">Review</button>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <div>
+                                            <p class="text-sm font-medium">Subject Request</p>
+                                            <p class="text-xs text-gray-600">Emma Watson - Student</p>
+                                        </div>
+                                        <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded-full">New</span>
+                                    </div>
+                                    <p class="text-xs text-gray-700 mb-2">Requesting: Economics HL</p>
+                                    <div class="flex gap-2">
+                                        <button class="text-xs bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">Approve</button>
+                                        <button class="text-xs bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">Reject</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold mb-4 flex items-center gap-2">
+                                <i data-lucide="bar-chart-2" class="w-5 h-5 text-blue-600"></i>
+                                Platform Activity
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm text-gray-700">Questions Attempted Today</span>
+                                        <span class="text-sm font-semibold">1,247</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-blue-600 h-2 rounded-full" style="width: 82%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm text-gray-700">Average Session Time</span>
+                                        <span class="text-sm font-semibold">28 mins</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-green-600 h-2 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm text-gray-700">Platform Health</span>
+                                        <span class="text-sm font-semibold text-green-600">Excellent</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-green-600 h-2 rounded-full" style="width: 98%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMIN CONTENT MANAGEMENT -->
+        <div id="admin-content" class="screen-container">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="border-b px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900">Content Library Management</h2>
+                            <p class="text-sm text-gray-500">Manage questions, subjects, and topics</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="download" class="w-4 h-4 inline mr-2"></i>
+                                Export
+                            </button>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                <i data-lucide="upload" class="w-4 h-4 inline mr-2"></i>
+                                Upload Questions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <!-- Filters -->
+                    <div class="grid grid-cols-5 gap-3 mb-6">
+                        <select class="px-4 py-2 border rounded-lg text-sm">
+                            <option>All Subjects</option>
+                            <option>Mathematics HL</option>
+                            <option>Physics HL</option>
+                            <option>Chemistry HL</option>
+                        </select>
+                        <select class="px-4 py-2 border rounded-lg text-sm">
+                            <option>All Topics</option>
+                            <option>Calculus</option>
+                            <option>Algebra</option>
+                            <option>Geometry</option>
+                        </select>
+                        <select class="px-4 py-2 border rounded-lg text-sm">
+                            <option>All Years</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                        </select>
+                        <select class="px-4 py-2 border rounded-lg text-sm">
+                            <option>All Difficulties</option>
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Hard</option>
+                        </select>
+                        <input type="text" placeholder="Search questions..." class="px-4 py-2 border rounded-lg text-sm">
+                    </div>
+
+                    <!-- Questions Grid -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <table class="w-full">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">
+                                        <input type="checkbox" class="rounded">
+                                    </th>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">Question ID</th>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">Subject / Topic</th>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">Year / Paper</th>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">Difficulty</th>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">Usage Stats</th>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">Status</th>
+                                    <th class="text-left p-4 text-sm font-semibold text-gray-700">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-4">
+                                        <input type="checkbox" class="rounded">
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="font-mono text-sm text-gray-900">CHEM-2022-P2-Q15</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm font-medium text-gray-900">Chemistry HL</p>
+                                        <p class="text-xs text-gray-500">Organic Chemistry</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm text-gray-900">2022 / Paper 2</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Medium</span>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm text-gray-900">247 attempts</p>
+                                        <p class="text-xs text-gray-500">68% avg accuracy</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Published</span>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="flex gap-2">
+                                            <button class="text-blue-600 hover:text-blue-700">
+                                                <i data-lucide="eye" class="w-4 h-4"></i>
+                                            </button>
+                                            <button class="text-gray-600 hover:text-gray-700">
+                                                <i data-lucide="edit" class="w-4 h-4"></i>
+                                            </button>
+                                            <button class="text-red-600 hover:text-red-700">
+                                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 bg-orange-50">
+                                    <td class="p-4">
+                                        <input type="checkbox" class="rounded">
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="font-mono text-sm text-gray-900">MATH-2023-P1-Q8</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm font-medium text-gray-900">Mathematics HL</p>
+                                        <p class="text-xs text-gray-500">Calculus - Integration</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm text-gray-900">2023 / Paper 1</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full">Hard</span>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm text-gray-900">89 attempts</p>
+                                        <p class="text-xs text-gray-500">42% avg accuracy</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Pending Review</span>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="flex gap-2">
+                                            <button class="text-blue-600 hover:text-blue-700">
+                                                <i data-lucide="eye" class="w-4 h-4"></i>
+                                            </button>
+                                            <button class="text-green-600 hover:text-green-700">
+                                                <i data-lucide="check" class="w-4 h-4"></i>
+                                            </button>
+                                            <button class="text-red-600 hover:text-red-700">
+                                                <i data-lucide="x" class="w-4 h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-4">
+                                        <input type="checkbox" class="rounded">
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="font-mono text-sm text-gray-900">PHYS-2022-P1-Q12</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm font-medium text-gray-900">Physics HL</p>
+                                        <p class="text-xs text-gray-500">Mechanics</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm text-gray-900">2022 / Paper 1</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Easy</span>
+                                    </td>
+                                    <td class="p-4">
+                                        <p class="text-sm text-gray-900">312 attempts</p>
+                                        <p class="text-xs text-gray-500">85% avg accuracy</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Published</span>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="flex gap-2">
+                                            <button class="text-blue-600 hover:text-blue-700">
+                                                <i data-lucide="eye" class="w-4 h-4"></i>
+                                            </button>
+                                            <button class="text-gray-600 hover:text-gray-700">
+                                                <i data-lucide="edit" class="w-4 h-4"></i>
+                                            </button>
+                                            <button class="text-red-600 hover:text-red-700">
+                                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-sm text-gray-600">Showing 1-20 of 2,847 questions</p>
+                        <div class="flex gap-2">
+                            <button class="px-3 py-1 border rounded hover:bg-gray-50">Previous</button>
+                            <button class="px-3 py-1 bg-blue-600 text-white rounded">1</button>
+                            <button class="px-3 py-1 border rounded hover:bg-gray-50">2</button>
+                            <button class="px-3 py-1 border rounded hover:bg-gray-50">3</button>
+                            <button class="px-3 py-1 border rounded hover:bg-gray-50">...</button>
+                            <button class="px-3 py-1 border rounded hover:bg-gray-50">143</button>
+                            <button class="px-3 py-1 border rounded hover:bg-gray-50">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Screen navigation data
+        const screens = {
+            student: [
+                { id: 'student-dashboard', name: 'Dashboard' },
+                { id: 'student-practice', name: 'Practice Mode' }
+            ],
+            mentor: [
+                { id: 'mentor-dashboard', name: 'Dashboard' }
+            ],
+            admin: [
+                { id: 'admin-dashboard', name: 'Dashboard' },
+                { id: 'admin-content', name: 'Content Library' }
+            ]
+        };
+
+        let currentRole = 'student';
+        let currentScreen = 'student-dashboard';
+
+        // Change role
+        window.changeRole = function(role) {
+            currentRole = role;
+            currentScreen = screens[role][0].id;
+            
+            // Update role buttons
+            document.querySelectorAll('.role-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-role="${role}"]`).classList.add('active');
+            
+            // Update screen navigation
+            updateScreenNav();
+            showScreen(currentScreen);
+        }
+
+        // Update screen navigation
+        function updateScreenNav() {
+            const nav = document.getElementById('screenNav');
+            nav.innerHTML = screens[currentRole].map(screen => `
+                <button 
+                    onclick="showScreen('${screen.id}')" 
+                    class="nav-btn screen-btn px-4 py-2 rounded-lg text-sm font-medium ${screen.id === currentScreen ? 'active' : 'bg-gray-100 hover:bg-gray-200'}"
+                    data-screen="${screen.id}"
+                >
+                    ${screen.name}
+                </button>
+            `).join('');
+        }
+
+        // Show screen
+        window.showScreen = function(screenId) {
+            // Hide all screens
+            document.querySelectorAll('.screen-container').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show selected screen
+            document.getElementById(screenId).classList.add('active');
+            currentScreen = screenId;
+            
+            // Update nav buttons
+            document.querySelectorAll('.screen-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-gray-100', 'hover:bg-gray-200');
+            });
+            const activeBtn = document.querySelector(`[data-screen="${screenId}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+            }
+            
+            // Reinitialize icons for new screen
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            updateScreenNav();
+            
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
