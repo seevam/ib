@@ -74,22 +74,53 @@ export default async function PracticePage({
 
   // Show error if database is not set up
   if (!user || !subjectData) {
+    const errorDetails = {
+      userError: !user,
+      subjectError: !subjectData,
+      subjectName: subject,
+      databaseUrl: process.env.DATABASE_URL ? 'Set ✓' : 'Not set ✗'
+    };
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-lg p-8 max-w-2xl shadow-lg">
           <div className="text-6xl mb-4 text-center">⚠️</div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Database Setup Required</h2>
+
+          {/* Debug Info */}
+          <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-sm">
+            <p className="font-semibold text-gray-900 mb-2">🔍 Debug Info:</p>
+            <ul className="space-y-1 text-gray-700">
+              <li>Database URL: <span className="font-mono">{errorDetails.databaseUrl}</span></li>
+              <li>User fetch: {errorDetails.userError ? '❌ Failed' : '✅ Success'}</li>
+              <li>Subject fetch ({errorDetails.subjectName}): {errorDetails.subjectError ? '❌ Failed' : '✅ Success'}</li>
+            </ul>
+          </div>
+
           <div className="space-y-4 text-gray-700">
-            <p>The database tables haven't been created yet. Please follow these steps:</p>
-            <ol className="list-decimal list-inside space-y-2 ml-4">
+            <p className="font-semibold">The database tables haven't been created yet. Please follow these steps:</p>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <p className="font-semibold text-yellow-900 mb-2">🚀 Quick Setup (Recommended):</p>
+              <ol className="list-decimal list-inside space-y-1 text-yellow-900 text-sm ml-2">
+                <li>Go to your Neon SQL Editor: <a href="https://console.neon.tech" target="_blank" className="text-blue-600 underline">console.neon.tech</a></li>
+                <li>Copy the SQL script from the instructions I provided earlier</li>
+                <li>Paste and run it in the SQL Editor</li>
+                <li>Refresh this page</li>
+              </ol>
+            </div>
+
+            <p className="text-sm text-gray-600">Or use the command line:</p>
+            <ol className="list-decimal list-inside space-y-2 ml-4 text-sm">
               <li>Make sure you've added your <code className="bg-gray-100 px-2 py-1 rounded">DATABASE_URL</code> to <code className="bg-gray-100 px-2 py-1 rounded">.env.local</code></li>
               <li>Run: <code className="bg-gray-100 px-2 py-1 rounded">npm run db:push</code> (creates tables)</li>
               <li>Run: <code className="bg-gray-100 px-2 py-1 rounded">npm run db:seed</code> (adds sample data)</li>
               <li>Restart the dev server: <code className="bg-gray-100 px-2 py-1 rounded">npm run dev</code></li>
             </ol>
+
             <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-              <p className="font-semibold text-blue-900 mb-2">📘 Need help?</p>
-              <p className="text-blue-800 text-sm">Check the README.md file for detailed setup instructions.</p>
+              <p className="font-semibold text-blue-900 mb-2">📘 Need more help?</p>
+              <p className="text-blue-800 text-sm">Check the README.md file for detailed setup instructions, or use the SQL script method above (fastest!).</p>
             </div>
           </div>
           <div className="mt-6 text-center">
