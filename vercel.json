@@ -4,9 +4,9 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "env": {
-    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "@next_public_clerk_publishable_key",
-    "CLERK_SECRET_KEY": "@clerk_secret_key",
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_test_Y2FzdWFsLWNvdWdhci04NC5jbGVyay5hY2NvdW50cy5kZXYk",
+    "CLERK_SECRET_KEY": "sk_test_FIoQBHwyEtItPUmmdoDPmsPi5jsVbWboBGddEQrmuD",
     "DATABASE_URL": "@database_url",
-    "OPENAI_API_KEY": "@openai_api_key"
+    "OPENAI_API_KEY": "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"
   }
 }
