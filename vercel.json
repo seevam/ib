@@ -6,7 +6,7 @@
   "env": {
     "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_test_Y2FzdWFsLWNvdWdhci04NC5jbGVyay5hY2NvdW50cy5kZXYk",
     "CLERK_SECRET_KEY": "sk_test_FIoQBHwyEtItPUmmdoDPmsPi5jsVbWboBGddEQrmuD",
-    "DATABASE_URL": "@database_url",
+    "DATABASE_URL": "postgresql://neondb_owner:npg_IlPL1rFn9Emh@ep-winter-cloud-ahx012d7-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require",
     "OPENAI_API_KEY": "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"
   }
 }
