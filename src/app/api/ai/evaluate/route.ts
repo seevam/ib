@@ -3,7 +3,7 @@ import { evaluateAnswer, Question } from '@/lib/ai/tutor';
 import { auth } from '@clerk/nextjs/server';
 import { db } from '@/lib/db';
 import { users, userProgress, userStats } from '@/lib/db/schema';
-import { eq } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,8 +25,12 @@ export async function POST(request: NextRequest) {
       const [existingProgress] = await db
         .select()
         .from(userProgress)
-        .where(eq(userProgress.questionId, questionId))
-        .where(eq(userProgress.userId, user.id));
+        .where(
+          and(
+            eq(userProgress.questionId, questionId),
+            eq(userProgress.userId, user.id)
+          )
+        );
 
       if (existingProgress) {
         // Update existing progress
