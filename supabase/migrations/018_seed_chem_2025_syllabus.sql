@@ -1,0 +1,1239 @@
+-- Migration 018: Seed IB 2025 Chemistry syllabus topics for CHEM_SL and CHEM_HL
+-- 21 topics for SL (Reactivity 1.4 excluded), 22 topics for HL
+
+DO $$
+DECLARE
+  chem_sl_id INTEGER;
+  chem_hl_id INTEGER;
+BEGIN
+  SELECT id INTO chem_sl_id FROM subjects WHERE name = 'CHEM_SL';
+  SELECT id INTO chem_hl_id FROM subjects WHERE name = 'CHEM_HL';
+
+  -- Replace existing curriculum topics for both levels
+  DELETE FROM topics WHERE subject_id IN (chem_sl_id, chem_hl_id);
+
+  -- ============================================================
+  -- STRUCTURE 1.1 — Models of the particulate nature of matter
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Models of the particulate nature of matter',
+    'Structure 1.1',
+    1,
+    5,
+    'easy',
+    ARRAY[
+      'Confusing physical and chemical changes of state',
+      'Incorrect particle diagrams for gases (particles too close or too ordered)',
+      'Mixing up properties of solids, liquids and gases',
+      'Failing to link macroscopic properties to the kinetic model'
+    ],
+    ARRAY[
+      'Describe the kinetic particle model for solids, liquids and gases in terms of arrangement, movement and energy of particles',
+      'Explain the macroscopic properties of solids, liquids and gases (compressibility, shape, volume, fluidity) using the kinetic model',
+      'Describe and explain changes of state (melting, boiling, sublimation) in terms of energy changes and intermolecular forces',
+      'Distinguish between pure substances and mixtures',
+      'Describe and explain methods of separating mixtures: distillation, chromatography, filtration and crystallisation',
+      'Distinguish between elements and compounds'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Models of the particulate nature of matter',
+    'Structure 1.1',
+    1,
+    5,
+    'easy',
+    ARRAY[
+      'Confusing physical and chemical changes of state',
+      'Incorrect particle diagrams for gases (particles too close or too ordered)',
+      'Mixing up properties of solids, liquids and gases',
+      'Failing to link macroscopic properties to the kinetic model',
+      'Misinterpreting Maxwell-Boltzmann distribution curves'
+    ],
+    ARRAY[
+      'Describe the kinetic particle model for solids, liquids and gases in terms of arrangement, movement and energy of particles',
+      'Explain the macroscopic properties of solids, liquids and gases (compressibility, shape, volume, fluidity) using the kinetic model',
+      'Describe and explain changes of state (melting, boiling, sublimation) in terms of energy changes and intermolecular forces',
+      'Distinguish between pure substances and mixtures',
+      'Describe and explain methods of separating mixtures: distillation, chromatography, filtration and crystallisation',
+      'Distinguish between elements and compounds',
+      'Describe and interpret Maxwell-Boltzmann energy distribution curves for a fixed amount of gas at different temperatures',
+      'Explain the effect of temperature on the proportion of particles with energy greater than a given threshold'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 1.2 — The nuclear atom
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The nuclear atom',
+    'Structure 1.2',
+    2,
+    5,
+    'easy',
+    ARRAY[
+      'Confusing mass number with atomic number',
+      'Forgetting that isotopes have the same atomic number but different mass numbers',
+      'Incorrectly calculating relative atomic mass from isotopic abundance data',
+      'Not appreciating that electrons have negligible mass'
+    ],
+    ARRAY[
+      'Describe the structure of the atom: a dense, positively charged nucleus containing protons and neutrons, surrounded by electrons',
+      'Define atomic number (Z) as the number of protons, and mass number (A) as the total number of protons and neutrons',
+      'Define isotopes as atoms of the same element with the same atomic number but different mass numbers',
+      'Describe how a mass spectrometer is used to determine the relative atomic mass of an element from its isotopic abundances',
+      'Calculate relative atomic mass from isotopic abundance and mass data'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The nuclear atom',
+    'Structure 1.2',
+    2,
+    5,
+    'easy',
+    ARRAY[
+      'Confusing mass number with atomic number',
+      'Forgetting that isotopes have the same atomic number but different mass numbers',
+      'Incorrectly calculating relative atomic mass from isotopic abundance data',
+      'Not appreciating that electrons have negligible mass',
+      'Errors in writing nuclear equations for radioactive decay'
+    ],
+    ARRAY[
+      'Describe the structure of the atom: a dense, positively charged nucleus containing protons and neutrons, surrounded by electrons',
+      'Define atomic number (Z) as the number of protons, and mass number (A) as the total number of protons and neutrons',
+      'Define isotopes as atoms of the same element with the same atomic number but different mass numbers',
+      'Describe how a mass spectrometer is used to determine the relative atomic mass of an element from its isotopic abundances',
+      'Calculate relative atomic mass from isotopic abundance and mass data',
+      'Describe the types of radioactive decay: alpha (α), beta-minus (β⁻) and gamma (γ)',
+      'Write and balance nuclear equations for radioactive decay, applying conservation of mass number and atomic number'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 1.3 — Electron configurations
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Electron configurations',
+    'Structure 1.3',
+    3,
+    5,
+    'medium',
+    ARRAY[
+      'Writing incorrect electron configurations for d-block elements (e.g. Cr, Cu)',
+      'Confusing sub-shell notation with shell notation',
+      'Misreading successive ionisation energy graphs to determine group number',
+      'Forgetting that ionisation energy has a general increase across a period with two anomalies'
+    ],
+    ARRAY[
+      'Describe the arrangement of electrons in main energy levels (shells), sub-levels (s, p, d) and orbitals',
+      'State the maximum number of electrons in each sub-level: s (2), p (6), d (10)',
+      'Write full and condensed electron configurations for elements up to Z = 36',
+      'Explain the trends in successive ionisation energies of an element and use these to deduce its group in the periodic table',
+      'Explain the general trend in first ionisation energy across a period and down a group',
+      'Explain the anomalies in first ionisation energy between groups 2 and 13, and between groups 15 and 16'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Electron configurations',
+    'Structure 1.3',
+    3,
+    5,
+    'medium',
+    ARRAY[
+      'Writing incorrect electron configurations for d-block elements (e.g. Cr, Cu)',
+      'Confusing sub-shell notation with shell notation',
+      'Misreading successive ionisation energy graphs to determine group number',
+      'Forgetting the anomalous configurations of Cr ([Ar] 3d⁵ 4s¹) and Cu ([Ar] 3d¹⁰ 4s¹)',
+      'Incorrectly applying Hund''s rule when filling degenerate orbitals'
+    ],
+    ARRAY[
+      'Describe the arrangement of electrons in main energy levels (shells), sub-levels (s, p, d) and orbitals',
+      'State the maximum number of electrons in each sub-level: s (2), p (6), d (10)',
+      'Write full and condensed electron configurations for elements up to Z = 36',
+      'Explain the trends in successive ionisation energies of an element and use these to deduce its group in the periodic table',
+      'Explain the general trend in first ionisation energy across a period and down a group',
+      'Explain the anomalies in first ionisation energy between groups 2 and 13, and between groups 15 and 16',
+      'Apply the Aufbau principle, Pauli exclusion principle and Hund''s rule to write orbital diagrams',
+      'Explain the anomalous electron configurations of Cr and Cu in terms of the extra stability of half-filled and fully-filled d sub-levels'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 1.4 — Counting particles by mass: the mole
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Counting particles by mass: the mole',
+    'Structure 1.4',
+    4,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing empirical formula with molecular formula',
+      'Forgetting to divide by Avogadro''s constant when converting moles to number of particles',
+      'Arithmetic errors when calculating molar mass of compounds',
+      'Not simplifying the empirical formula to the lowest whole-number ratio'
+    ],
+    ARRAY[
+      'Define the mole as the amount of substance containing the same number of particles as there are atoms in exactly 12 g of carbon-12',
+      'State the value of Avogadro''s constant: Nₐ = 6.02 × 10²³ mol⁻¹',
+      'Interconvert between amount in moles, mass and molar mass using n = m / M',
+      'Interconvert between amount in moles and number of particles using N = n × Nₐ',
+      'Determine the empirical formula of a compound from percentage composition or experimental data',
+      'Determine the molecular formula from the empirical formula and the molar mass',
+      'Calculate the percentage composition by mass of a compound from its formula'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Counting particles by mass: the mole',
+    'Structure 1.4',
+    4,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing empirical formula with molecular formula',
+      'Forgetting to divide by Avogadro''s constant when converting moles to number of particles',
+      'Arithmetic errors when calculating molar mass of compounds',
+      'Not simplifying the empirical formula to the lowest whole-number ratio',
+      'Errors in combustion analysis calculations (not accounting for all atoms)'
+    ],
+    ARRAY[
+      'Define the mole as the amount of substance containing the same number of particles as there are atoms in exactly 12 g of carbon-12',
+      'State the value of Avogadro''s constant: Nₐ = 6.02 × 10²³ mol⁻¹',
+      'Interconvert between amount in moles, mass and molar mass using n = m / M',
+      'Interconvert between amount in moles and number of particles using N = n × Nₐ',
+      'Determine the empirical formula of a compound from percentage composition or experimental data',
+      'Determine the molecular formula from the empirical formula and the molar mass',
+      'Calculate the percentage composition by mass of a compound from its formula',
+      'Determine empirical and molecular formulas from combustion analysis data (mass of CO₂ and H₂O produced)'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 1.5 — Ideal gases
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Ideal gases',
+    'Structure 1.5',
+    5,
+    5,
+    'medium',
+    ARRAY[
+      'Using Celsius instead of Kelvin in gas law calculations',
+      'Forgetting to convert pressure units to Pa when using R = 8.314 J K⁻¹ mol⁻¹',
+      'Misidentifying which variables are constant when applying individual gas laws',
+      'Not stating standard conditions correctly (STP: 0 °C, 100 kPa)'
+    ],
+    ARRAY[
+      'State the assumptions of the ideal gas model: point particles, no intermolecular forces, elastic collisions',
+      'Apply Boyle''s law (P ∝ 1/V at constant T and n) to solve problems',
+      'Apply Charles'' law (V ∝ T at constant P and n) to solve problems',
+      'Apply Avogadro''s law (V ∝ n at constant T and P) to solve problems',
+      'Solve problems using the ideal gas law: PV = nRT',
+      'State and use the molar volume of an ideal gas at STP (0 °C, 100 kPa) = 22.7 L mol⁻¹',
+      'Convert between Celsius and Kelvin: T(K) = T(°C) + 273'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Ideal gases',
+    'Structure 1.5',
+    5,
+    5,
+    'medium',
+    ARRAY[
+      'Using Celsius instead of Kelvin in gas law calculations',
+      'Forgetting to convert pressure units to Pa when using R = 8.314 J K⁻¹ mol⁻¹',
+      'Misidentifying which variables are constant when applying individual gas laws',
+      'Incorrectly predicting when real gases deviate most from ideal behaviour'
+    ],
+    ARRAY[
+      'State the assumptions of the ideal gas model: point particles, no intermolecular forces, elastic collisions',
+      'Apply Boyle''s law (P ∝ 1/V at constant T and n) to solve problems',
+      'Apply Charles'' law (V ∝ T at constant P and n) to solve problems',
+      'Apply Avogadro''s law (V ∝ n at constant T and P) to solve problems',
+      'Solve problems using the ideal gas law: PV = nRT',
+      'State and use the molar volume of an ideal gas at STP (0 °C, 100 kPa) = 22.7 L mol⁻¹',
+      'Convert between Celsius and Kelvin: T(K) = T(°C) + 273',
+      'Explain why real gases deviate from ideal behaviour at high pressure and low temperature',
+      'Explain deviations in terms of non-negligible particle volume and intermolecular attractive forces'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 2.1 — The ionic model
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The ionic model',
+    'Structure 2.1',
+    6,
+    5,
+    'medium',
+    ARRAY[
+      'Mixing up cation and anion charges for transition metals',
+      'Forgetting that ionic compounds must be overall charge-neutral',
+      'Confusing ionic radius trends with atomic radius trends',
+      'Incorrectly assigning oxidation states in polyatomic ions'
+    ],
+    ARRAY[
+      'Describe ionic bonding as the electrostatic attraction between oppositely charged ions formed by electron transfer',
+      'Predict the charges of ions formed by s- and p-block elements from their position in the periodic table',
+      'Explain the relationship between ionic charge, ionic radius and the strength of the ionic lattice',
+      'Explain the properties of ionic compounds: high melting and boiling points, brittleness, electrical conductivity when molten or dissolved',
+      'Write correct formulas for ionic compounds using ion charges to achieve overall charge neutrality',
+      'Define oxidation state and assign oxidation states to elements in compounds and ions',
+      'Describe the structure of ionic compounds as a three-dimensional lattice of alternating cations and anions'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The ionic model',
+    'Structure 2.1',
+    6,
+    5,
+    'medium',
+    ARRAY[
+      'Mixing up cation and anion charges for transition metals',
+      'Forgetting that ionic compounds must be overall charge-neutral',
+      'Direction errors in Born-Haber cycles (endothermic vs exothermic steps)',
+      'Confusing lattice enthalpy of formation with lattice enthalpy of dissociation'
+    ],
+    ARRAY[
+      'Describe ionic bonding as the electrostatic attraction between oppositely charged ions formed by electron transfer',
+      'Predict the charges of ions formed by s- and p-block elements from their position in the periodic table',
+      'Explain the relationship between ionic charge, ionic radius and the strength of the ionic lattice',
+      'Explain the properties of ionic compounds: high melting and boiling points, brittleness, electrical conductivity when molten or dissolved',
+      'Write correct formulas for ionic compounds using ion charges to achieve overall charge neutrality',
+      'Define oxidation state and assign oxidation states to elements in compounds and ions',
+      'Construct a Born-Haber cycle for a Group 1 or Group 2 ionic compound and use it to calculate lattice enthalpy',
+      'Explain trends in lattice enthalpies in terms of ionic charge and ionic radius'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 2.2 — The covalent model
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The covalent model',
+    'Structure 2.2',
+    7,
+    7,
+    'medium',
+    ARRAY[
+      'Drawing Lewis structures with incorrect electron counts',
+      'Applying VSEPR incorrectly when lone pairs are present on the central atom',
+      'Confusing bond polarity with overall molecular polarity',
+      'Forgetting that a molecule with polar bonds can still be non-polar due to symmetry'
+    ],
+    ARRAY[
+      'Describe covalent bonding as the sharing of one or more electron pairs between non-metal atoms',
+      'Draw Lewis (electron dot) structures for molecules and polyatomic ions, including those with expanded octets',
+      'Apply VSEPR theory to predict the electron domain geometry and molecular geometry for species with 2–6 electron domains',
+      'Predict and explain bond angles in molecules and ions using VSEPR',
+      'Define electronegativity and use Pauling values to predict bond polarity',
+      'Distinguish between polar and non-polar bonds, and between polar and non-polar molecules',
+      'Differentiate between sigma (σ) bonds (end-on overlap) and pi (π) bonds (sideways overlap)',
+      'Relate the number of bonds between two atoms to bond length and bond strength'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The covalent model',
+    'Structure 2.2',
+    7,
+    7,
+    'hard',
+    ARRAY[
+      'Drawing Lewis structures with incorrect electron counts',
+      'Applying VSEPR incorrectly when lone pairs are present on the central atom',
+      'Confusing bond polarity with overall molecular polarity',
+      'Incorrectly assigning hybridisation — forgetting that triple bonds involve sp hybridisation',
+      'Not recognising delocalisation in resonance structures'
+    ],
+    ARRAY[
+      'Describe covalent bonding as the sharing of one or more electron pairs between non-metal atoms',
+      'Draw Lewis (electron dot) structures for molecules and polyatomic ions, including those with expanded octets',
+      'Apply VSEPR theory to predict the electron domain geometry and molecular geometry for species with 2–6 electron domains',
+      'Predict and explain bond angles in molecules and ions using VSEPR',
+      'Define electronegativity and use Pauling values to predict bond polarity',
+      'Distinguish between polar and non-polar bonds, and between polar and non-polar molecules',
+      'Differentiate between sigma (σ) bonds and pi (π) bonds',
+      'Relate the number of bonds between two atoms to bond length and bond strength',
+      'Describe sp³, sp² and sp hybridisation and relate hybridisation to molecular geometry',
+      'Explain delocalisation of electrons in molecules such as benzene and the carbonate ion using resonance structures'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 2.3 — The metallic model
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The metallic model',
+    'Structure 2.3',
+    8,
+    4,
+    'easy',
+    ARRAY[
+      'Describing metallic bonding without explicitly mentioning delocalised electrons',
+      'Confusing metallic properties with ionic properties',
+      'Not explaining why metals are malleable in terms of the bonding model'
+    ],
+    ARRAY[
+      'Describe metallic bonding as the electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons',
+      'Explain the physical properties of metals (electrical conductivity, thermal conductivity, malleability, ductility, high melting point) using the metallic bonding model',
+      'Explain why metals are good conductors of electricity in terms of delocalised electrons',
+      'Describe alloys as mixtures of metals and explain how alloying changes properties such as hardness and melting point'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The metallic model',
+    'Structure 2.3',
+    8,
+    4,
+    'medium',
+    ARRAY[
+      'Describing metallic bonding without explicitly mentioning delocalised electrons',
+      'Confusing metallic properties with ionic properties',
+      'Not explaining why metals are malleable in terms of the bonding model',
+      'Confusing conductors, semiconductors and insulators in band theory'
+    ],
+    ARRAY[
+      'Describe metallic bonding as the electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons',
+      'Explain the physical properties of metals (electrical conductivity, thermal conductivity, malleability, ductility, high melting point) using the metallic bonding model',
+      'Explain why metals are good conductors of electricity in terms of delocalised electrons',
+      'Describe alloys as mixtures of metals and explain how alloying changes properties such as hardness and melting point',
+      'Describe band theory: the formation of valence bands and conduction bands from atomic orbitals',
+      'Distinguish between electrical conductors, semiconductors and insulators using band theory'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 2.4 — From models to materials
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'From models to materials',
+    'Structure 2.4',
+    9,
+    4,
+    'medium',
+    ARRAY[
+      'Incorrectly classifying network covalent solids (e.g. SiO₂) as molecular',
+      'Confusing intermolecular forces with intramolecular bonds when comparing structures',
+      'Not distinguishing allotropes from isotopes'
+    ],
+    ARRAY[
+      'Classify substances as ionic, metallic, covalent molecular or covalent network based on their properties',
+      'Explain the relationship between structure, bonding type and physical properties (melting point, conductivity, solubility)',
+      'Describe the giant covalent (network) structures of diamond, graphite and silicon dioxide and explain their properties',
+      'Define allotropes as different structural forms of the same element',
+      'Describe the allotropes of carbon: diamond, graphite, C₆₀ fullerene and graphene, and relate their structures to their properties'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'From models to materials',
+    'Structure 2.4',
+    9,
+    4,
+    'medium',
+    ARRAY[
+      'Incorrectly classifying network covalent solids (e.g. SiO₂) as molecular',
+      'Confusing intermolecular forces with intramolecular bonds when comparing structures',
+      'Not distinguishing allotropes from isotopes',
+      'Vague descriptions of how nanostructure properties differ from bulk material properties'
+    ],
+    ARRAY[
+      'Classify substances as ionic, metallic, covalent molecular or covalent network based on their properties',
+      'Explain the relationship between structure, bonding type and physical properties (melting point, conductivity, solubility)',
+      'Describe the giant covalent (network) structures of diamond, graphite and silicon dioxide and explain their properties',
+      'Define allotropes as different structural forms of the same element',
+      'Describe the allotropes of carbon: diamond, graphite, C₆₀ fullerene and graphene, and relate their structures to their properties',
+      'Explain how the properties of nanoparticles (e.g. large surface area to volume ratio) differ from bulk materials',
+      'Describe the structure and properties of polymers as an example of engineered covalent materials'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 3.1 — The periodic table: classification of elements
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The periodic table—classification of elements',
+    'Structure 3.1',
+    10,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing the trend in atomic radius across a period (decreases) with down a group (increases)',
+      'Forgetting the two anomalies in first ionisation energy (groups 2→13 and 15→16)',
+      'Incorrectly stating that all transition metals form coloured compounds',
+      'Omitting variable oxidation states when describing transition metal properties'
+    ],
+    ARRAY[
+      'Describe the arrangement of the periodic table into periods, groups and s, p, d blocks',
+      'Explain the periodic trend in atomic radius across a period (decreases) and down a group (increases)',
+      'Explain the trend in first ionisation energy across a period and down a group',
+      'Explain the anomalies in first ionisation energy between groups 2 and 13, and between groups 15 and 16',
+      'Explain the trend in electronegativity across a period and down a group',
+      'Describe the reactions of Group 1 alkali metals with water and oxygen',
+      'Describe the trend in reactivity of Group 17 halogens and explain displacement reactions',
+      'List the characteristic properties of transition metals: variable oxidation states, formation of coloured ions, catalytic behaviour and complex ion formation'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The periodic table—classification of elements',
+    'Structure 3.1',
+    10,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing the trend in atomic radius across a period (decreases) with down a group (increases)',
+      'Forgetting the two anomalies in first ionisation energy',
+      'Not explaining d-orbital splitting when discussing transition metal colour',
+      'Vague explanations of periodic trends without reference to nuclear charge and shielding'
+    ],
+    ARRAY[
+      'Describe the arrangement of the periodic table into periods, groups and s, p, d blocks',
+      'Explain periodic trends in atomic radius, first ionisation energy and electronegativity in terms of nuclear charge, shielding and distance',
+      'Explain the anomalies in first ionisation energy between groups 2 and 13, and between groups 15 and 16',
+      'Describe the reactions of Group 1 alkali metals with water and oxygen',
+      'Describe the trend in reactivity of Group 17 halogens and explain displacement reactions',
+      'List the characteristic properties of transition metals: variable oxidation states, formation of coloured ions, catalytic behaviour and complex ion formation',
+      'Explain the colour of transition metal compounds in terms of d-orbital splitting and absorption of visible light',
+      'Explain the reactions of Period 3 oxides with water and classify the resulting solutions as acidic, basic or amphoteric'
+    ]
+  );
+
+
+  -- ============================================================
+  -- STRUCTURE 3.2 — Functional group chemistry
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Functional group chemistry',
+    'Structure 3.2',
+    11,
+    6,
+    'medium',
+    ARRAY[
+      'IUPAC naming errors (wrong parent chain, incorrect numbering)',
+      'Misidentifying the oxidation product of a primary versus secondary alcohol',
+      'Confusing addition reactions (alkenes) with substitution reactions (alkanes)',
+      'Writing incorrect ester products or reversing the condensation reaction'
+    ],
+    ARRAY[
+      'Identify and name functional groups: alkyl halide, alcohol, aldehyde, ketone, carboxylic acid, ester, amine and amide',
+      'Apply IUPAC rules to name and draw structural formulas for organic compounds containing these functional groups',
+      'Describe the nucleophilic substitution of halogenoalkanes with aqueous NaOH, KCN and NH₃',
+      'Describe the oxidation of primary alcohols to aldehydes and carboxylic acids, and secondary alcohols to ketones',
+      'Describe the formation of esters by condensation of carboxylic acids with alcohols (esterification)',
+      'Distinguish between addition, substitution, elimination and condensation reaction types'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Functional group chemistry',
+    'Structure 3.2',
+    11,
+    6,
+    'hard',
+    ARRAY[
+      'IUPAC naming errors (wrong parent chain, incorrect numbering)',
+      'Confusing SN1 and SN2 conditions (substrate, solvent, nucleophile strength)',
+      'Not drawing curly arrows correctly in reaction mechanisms',
+      'Misidentifying chiral centres or drawing incorrect enantiomers'
+    ],
+    ARRAY[
+      'Identify and name functional groups: alkyl halide, alcohol, aldehyde, ketone, carboxylic acid, ester, amine and amide',
+      'Apply IUPAC rules to name and draw structural formulas for organic compounds containing these functional groups',
+      'Describe the nucleophilic substitution of halogenoalkanes with aqueous NaOH, KCN and NH₃',
+      'Describe the oxidation of primary and secondary alcohols',
+      'Describe the formation of esters by condensation of carboxylic acids with alcohols',
+      'Distinguish between addition, substitution, elimination and condensation reaction types',
+      'Explain the SN1 and SN2 mechanisms for nucleophilic substitution, including the factors that favour each pathway',
+      'Describe optical isomerism: identify chiral centres and draw enantiomers',
+      'Use curly arrow notation to represent the movement of electron pairs in organic reaction mechanisms'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 1.1 — Measuring enthalpy changes
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Measuring enthalpy changes',
+    'Reactivity 1.1',
+    12,
+    6,
+    'medium',
+    ARRAY[
+      'Using the wrong sign convention (forgetting exothermic has negative ΔH)',
+      'Using the wrong specific heat capacity (using water''s value for solutions of different composition)',
+      'Not accounting for heat loss in open calorimetry experiments',
+      'Confusing standard enthalpy of combustion with standard enthalpy of formation'
+    ],
+    ARRAY[
+      'Define enthalpy change (ΔH) and distinguish between exothermic (ΔH < 0) and endothermic (ΔH > 0) reactions',
+      'Calculate the heat change using q = mcΔT and convert to molar enthalpy change',
+      'Define standard enthalpy of combustion (ΔH°c) as the enthalpy change when one mole of substance burns completely under standard conditions',
+      'Define standard enthalpy of formation (ΔH°f) as the enthalpy change when one mole of compound is formed from its elements in their standard states',
+      'Apply Hess''s law to calculate enthalpy changes that cannot be measured directly',
+      'Calculate enthalpy changes from mean bond enthalpies (bonds broken minus bonds formed)',
+      'Explain why bond enthalpy values are averages and why they differ from actual values'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Measuring enthalpy changes',
+    'Reactivity 1.1',
+    12,
+    6,
+    'medium',
+    ARRAY[
+      'Using the wrong sign convention (forgetting exothermic has negative ΔH)',
+      'Using the wrong specific heat capacity in calorimetry calculations',
+      'Not accounting for heat loss in open calorimetry experiments',
+      'Confusing standard enthalpy of combustion with standard enthalpy of formation',
+      'Errors in determining the calorimeter constant'
+    ],
+    ARRAY[
+      'Define enthalpy change (ΔH) and distinguish between exothermic (ΔH < 0) and endothermic (ΔH > 0) reactions',
+      'Calculate the heat change using q = mcΔT and convert to molar enthalpy change',
+      'Define standard enthalpy of combustion (ΔH°c) and standard enthalpy of formation (ΔH°f)',
+      'Apply Hess''s law to calculate enthalpy changes that cannot be measured directly',
+      'Calculate enthalpy changes from mean bond enthalpies and explain discrepancies with experimental values',
+      'Describe the use of a bomb calorimeter to measure enthalpy of combustion',
+      'Calculate the calorimeter constant and use it to correct experimental enthalpy values'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 1.2 — Energy cycles in reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Energy cycles in reactions',
+    'Reactivity 1.2',
+    13,
+    5,
+    'medium',
+    ARRAY[
+      'Sign errors when reversing an equation in a Hess''s law cycle',
+      'Forgetting to multiply ΔH by stoichiometric coefficients when scaling equations',
+      'Confusing which direction is exothermic in a Hess cycle diagram'
+    ],
+    ARRAY[
+      'Construct energy cycles (Hess''s law diagrams) to calculate enthalpy changes for reactions',
+      'Calculate ΔH°rxn using: ΔH°rxn = Σ ΔH°f(products) − Σ ΔH°f(reactants)',
+      'Apply Hess''s law by combining thermochemical equations algebraically, reversing and scaling as needed',
+      'Calculate enthalpy changes from average bond enthalpies: ΔH = Σ(bonds broken) − Σ(bonds formed)',
+      'Explain why bond enthalpy calculations give approximate values compared to experimentally determined values'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Energy cycles in reactions',
+    'Reactivity 1.2',
+    13,
+    5,
+    'hard',
+    ARRAY[
+      'Sign errors when reversing an equation in a Hess''s law or Born-Haber cycle',
+      'Forgetting to multiply ΔH by stoichiometric coefficients when scaling equations',
+      'Confusing lattice enthalpy of formation with lattice enthalpy of dissociation',
+      'Incorrect direction of electron affinity step in Born-Haber cycle'
+    ],
+    ARRAY[
+      'Construct energy cycles (Hess''s law diagrams) to calculate enthalpy changes for reactions',
+      'Calculate ΔH°rxn using: ΔH°rxn = Σ ΔH°f(products) − Σ ΔH°f(reactants)',
+      'Apply Hess''s law by combining thermochemical equations algebraically',
+      'Calculate enthalpy changes from average bond enthalpies',
+      'Construct a Born-Haber cycle for an ionic compound and use it to calculate lattice enthalpy or electron affinity',
+      'Identify and explain the steps in a Born-Haber cycle: atomisation, ionisation, electron affinity, formation enthalpy and lattice enthalpy',
+      'Explain trends in lattice enthalpies in terms of ionic charge and radius'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 1.3 — Entropy and spontaneity
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Entropy and spontaneity',
+    'Reactivity 1.3',
+    14,
+    5,
+    'hard',
+    ARRAY[
+      'Forgetting to use Kelvin (not Celsius) in ΔG = ΔH − TΔS',
+      'Confusing spontaneous with fast — a spontaneous reaction can still be very slow',
+      'Incorrectly predicting entropy change direction (e.g. gas dissolution always decreases entropy of gas)',
+      'Not considering both ΔH and TΔS when determining spontaneity at different temperatures'
+    ],
+    ARRAY[
+      'Define entropy (S) as a measure of the dispersal of energy or matter at the molecular level',
+      'Predict and explain entropy changes for physical changes (melting, vaporisation) and chemical reactions',
+      'State that the entropy of a system increases when: number of moles of gas increases, a solid dissolves, temperature increases',
+      'Define Gibbs free energy change: ΔG = ΔH − TΔS',
+      'Use the sign of ΔG to predict whether a reaction is spontaneous (ΔG < 0), non-spontaneous (ΔG > 0) or at equilibrium (ΔG = 0)',
+      'Analyse the four combinations of ΔH and ΔS signs to determine temperature dependence of spontaneity'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Entropy and spontaneity',
+    'Reactivity 1.3',
+    14,
+    5,
+    'hard',
+    ARRAY[
+      'Forgetting to use Kelvin in ΔG = ΔH − TΔS',
+      'Confusing spontaneous with fast',
+      'Incorrectly predicting entropy change direction',
+      'Confusing standard Gibbs free energy ΔG° with ΔG under non-standard conditions'
+    ],
+    ARRAY[
+      'Define entropy (S) as a measure of the dispersal of energy or matter at the molecular level',
+      'Predict and explain entropy changes for physical and chemical processes',
+      'Define Gibbs free energy change: ΔG = ΔH − TΔS',
+      'Use the sign of ΔG to predict spontaneity',
+      'Analyse the four combinations of ΔH and ΔS signs to determine temperature dependence of spontaneity',
+      'Explain the relationship between ΔG° and the equilibrium constant K using ΔG° = −RT ln K',
+      'Calculate K from ΔG° or ΔG° from K at a given temperature'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 1.4 — Entropy and spontaneity (HL extension — HL only)
+  -- ============================================================
+
+  -- HL only (no SL insert)
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Entropy and spontaneity (HL extension)',
+    'Reactivity 1.4',
+    15,
+    4,
+    'hard',
+    ARRAY[
+      'Confusing ΔG° (standard conditions) with ΔG (non-standard conditions)',
+      'Sign errors when relating ΔG° = −nFE°cell',
+      'Forgetting that K > 1 implies ΔG° < 0 (forward reaction favoured at standard conditions)',
+      'Not recognising that ΔG° = 0 means K = 1, not that the reaction doesn''t occur'
+    ],
+    ARRAY[
+      'Derive and apply the relationship ΔG° = −RT ln K to calculate K from ΔG° or vice versa',
+      'Explain that when ΔG° < 0, K > 1 and the forward reaction is favoured at standard conditions',
+      'Derive and apply the relationship ΔG° = −nFE°cell linking Gibbs energy to standard cell potential',
+      'Calculate standard cell potential from ΔG° or calculate ΔG° from E°cell',
+      'Explain how temperature affects both K and ΔG° for a given reaction'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 2.1 — How much? The amount of chemical change
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'How much? The amount of chemical change',
+    'Reactivity 2.1',
+    15,
+    7,
+    'medium',
+    ARRAY[
+      'Failing to identify the limiting reagent before calculating yield',
+      'Confusing theoretical yield with actual yield in percentage yield calculations',
+      'Titration calculation errors: not multiplying by volume in dm³',
+      'Forgetting to account for stoichiometric ratios when calculating moles in reactions'
+    ],
+    ARRAY[
+      'Write and balance full and ionic chemical equations including state symbols',
+      'Identify the limiting reagent in a reaction and use it to calculate theoretical yield',
+      'Calculate percentage yield: (actual yield / theoretical yield) × 100%',
+      'Calculate atom economy: (molar mass of desired product / total molar mass of all products) × 100%',
+      'Solve titration calculations to determine the concentration or volume of a solution',
+      'Calculate the concentration of a solution in mol dm⁻³',
+      'Perform multi-step stoichiometric calculations involving solution chemistry'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'How much? The amount of chemical change',
+    'Reactivity 2.1',
+    16,
+    7,
+    'medium',
+    ARRAY[
+      'Failing to identify the limiting reagent before calculating yield',
+      'Confusing theoretical yield with actual yield in percentage yield calculations',
+      'Titration calculation errors: not multiplying by volume in dm³',
+      'Errors in back-titration calculations (not accounting for excess reagent)'
+    ],
+    ARRAY[
+      'Write and balance full and ionic chemical equations including state symbols',
+      'Identify the limiting reagent and calculate theoretical yield',
+      'Calculate percentage yield and atom economy',
+      'Solve titration calculations to determine concentration or volume',
+      'Perform back-titration calculations to determine the amount of substance that cannot be titrated directly',
+      'Solve multi-step stoichiometric calculations, including those involving volumetric analysis'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 2.2 — How fast? The rate of chemical change
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'How fast? The rate of chemical change',
+    'Reactivity 2.2',
+    16,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing rate constant k with rate of reaction',
+      'Misidentifying reaction order from concentration–time graphs versus rate–concentration graphs',
+      'Drawing energy profiles with the catalyst pathway going below the reactant energy level',
+      'Stating that catalysts are consumed in the reaction'
+    ],
+    ARRAY[
+      'Define rate of reaction and describe methods to measure it (gas volume, mass loss, colorimetry, titration)',
+      'Explain collision theory: reactions occur when particles collide with sufficient energy (≥ Ea) and correct orientation',
+      'Explain the effect of concentration, temperature, surface area and catalysts on reaction rate using collision theory',
+      'Describe activation energy (Ea) and sketch and interpret energy profiles for catalysed and uncatalysed reactions',
+      'Deduce the rate equation (rate = k[A]^m[B]^n) and reaction orders from experimental data',
+      'Explain the role of catalysts in providing an alternative reaction pathway with lower activation energy',
+      'Distinguish between homogeneous and heterogeneous catalysis with examples'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'How fast? The rate of chemical change',
+    'Reactivity 2.2',
+    17,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing rate constant k with rate of reaction',
+      'Errors in applying the Arrhenius equation (using wrong units or not converting to Kelvin)',
+      'Incorrectly identifying the rate-determining step in a multi-step mechanism',
+      'Not checking that the proposed mechanism is consistent with the experimental rate equation'
+    ],
+    ARRAY[
+      'Define rate of reaction and describe methods to measure it',
+      'Explain collision theory and the effect of reaction conditions on rate',
+      'Describe activation energy and interpret energy profiles',
+      'Deduce rate equations and reaction orders from experimental data',
+      'Apply the Arrhenius equation: k = Ae^(−Ea/RT) to calculate Ea or k at different temperatures',
+      'Use the linear form ln k = ln A − Ea/RT and a graph of ln k vs 1/T to determine Ea',
+      'Describe reaction mechanisms as a sequence of elementary steps and identify the rate-determining step',
+      'Verify that a proposed mechanism is consistent with the experimental rate equation'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 2.3 — How far? The extent of chemical change
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'How far? The extent of chemical change',
+    'Reactivity 2.3',
+    17,
+    6,
+    'hard',
+    ARRAY[
+      'Including solids or pure liquids in Kc expressions',
+      'Applying Le Chatelier''s principle incorrectly for pressure changes when moles of gas are equal on both sides',
+      'ICE table errors: incorrect initial concentrations or algebraic mistakes',
+      'Confusing Kc with the reaction quotient Q'
+    ],
+    ARRAY[
+      'Define dynamic equilibrium as a state where the forward and reverse reaction rates are equal and concentrations remain constant in a closed system',
+      'Write the equilibrium constant expression Kc for homogeneous reactions',
+      'Interpret the magnitude of Kc: large Kc favours products, small Kc favours reactants',
+      'Apply Le Chatelier''s principle to predict the effect of changes in concentration, temperature and pressure on equilibrium position',
+      'Explain the effect of a catalyst on equilibrium: reaches equilibrium faster but does not change the equilibrium position or Kc',
+      'Perform equilibrium calculations using ICE (initial, change, equilibrium) tables',
+      'Describe the Haber process and the contact process as industrial applications of equilibrium principles'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'How far? The extent of chemical change',
+    'Reactivity 2.3',
+    18,
+    6,
+    'hard',
+    ARRAY[
+      'Including solids or pure liquids in Kc or Kp expressions',
+      'Applying Le Chatelier''s principle incorrectly for pressure changes',
+      'ICE table errors in equilibrium calculations',
+      'Errors in the relationship Kp = Kc(RT)^Δn'
+    ],
+    ARRAY[
+      'Define dynamic equilibrium and write Kc expressions for homogeneous reactions',
+      'Interpret the magnitude of Kc',
+      'Apply Le Chatelier''s principle to predict equilibrium shifts',
+      'Perform equilibrium calculations using ICE tables',
+      'Write Kp expressions for gaseous equilibria and solve Kp calculations',
+      'Interconvert between Kc and Kp using Kp = Kc(RT)^Δn',
+      'Write equilibrium expressions for heterogeneous equilibria (excluding pure solids and liquids)',
+      'Relate Kc to ΔG° using ΔG° = −RT ln K'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 3.1 — Proton transfer reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Proton transfer reactions',
+    'Reactivity 3.1',
+    18,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing strong/weak acids with concentrated/dilute',
+      'Incorrect identification of conjugate acid-base pairs',
+      'pH calculation errors: forgetting to take the negative log or using wrong formula for bases',
+      'Not recognising that a weak acid only partially dissociates'
+    ],
+    ARRAY[
+      'Define acids and bases according to the Brønsted-Lowry theory (proton donors and acceptors)',
+      'Identify conjugate acid-base pairs in proton transfer reactions',
+      'Explain the autoionisation of water: H₂O(l) ⇌ H⁺(aq) + OH⁻(aq), Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25 °C',
+      'Define pH = −log[H⁺] and calculate pH of strong acids and strong bases',
+      'Distinguish between strong and weak acids/bases in terms of degree of dissociation',
+      'Explain the action of a buffer solution and calculate the pH change when small amounts of acid or base are added'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Proton transfer reactions',
+    'Reactivity 3.1',
+    19,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing strong/weak acids with concentrated/dilute',
+      'Incorrect identification of conjugate acid-base pairs',
+      'Errors in weak acid pH calculations (forgetting to use Ka properly)',
+      'Applying Henderson-Hasselbalch equation outside its valid range'
+    ],
+    ARRAY[
+      'Define acids and bases according to Brønsted-Lowry theory and identify conjugate pairs',
+      'Explain the autoionisation of water and define Kw',
+      'Define pH = −log[H⁺] and calculate pH of strong acids and strong bases',
+      'Distinguish between strong and weak acids/bases in terms of degree of dissociation and Ka/Kb values',
+      'Calculate the pH of weak acid solutions using Ka and the approximation method',
+      'Apply the Henderson-Hasselbalch equation to calculate buffer pH: pH = pKa + log([A⁻]/[HA])',
+      'Calculate the pH of a buffer solution after addition of small amounts of strong acid or base',
+      'Explain the relationship between Ka and Kb for a conjugate pair: Ka × Kb = Kw'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 3.2 — Electron transfer reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Electron transfer reactions',
+    'Reactivity 3.2',
+    19,
+    6,
+    'hard',
+    ARRAY[
+      'Incorrect oxidation state assignments leading to wrong half-equations',
+      'Forgetting to balance charge in half-equations (using H⁺ or OH⁻ and H₂O)',
+      'Confusing cathode and anode in electrolytic vs galvanic cells',
+      'Incorrect sign for E°cell (subtracting in the wrong order)'
+    ],
+    ARRAY[
+      'Define oxidation as loss of electrons and reduction as gain of electrons (OIL RIG)',
+      'Assign oxidation states to atoms in compounds and ions using oxidation state rules',
+      'Write and balance half-equations for oxidation and reduction',
+      'Combine half-equations to write balanced overall redox equations',
+      'Describe the standard hydrogen electrode (SHE) and define standard electrode potential E°',
+      'Calculate standard cell potential: E°cell = E°cathode − E°anode',
+      'Predict the direction of spontaneous electron flow in a galvanic cell using E° values',
+      'Describe electrolysis and predict the products at each electrode for molten and aqueous electrolytes'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Electron transfer reactions',
+    'Reactivity 3.2',
+    20,
+    6,
+    'hard',
+    ARRAY[
+      'Incorrect oxidation state assignments leading to wrong half-equations',
+      'Forgetting to balance charge in half-equations',
+      'Confusing cathode and anode in electrolytic vs galvanic cells',
+      'Errors in Faraday''s law calculations (using wrong charge per mole or wrong valence)'
+    ],
+    ARRAY[
+      'Define oxidation and reduction in terms of electron transfer and assign oxidation states',
+      'Write and balance half-equations and overall redox equations',
+      'Describe the standard hydrogen electrode and define standard electrode potential',
+      'Calculate standard cell potential and predict spontaneity using E°cell',
+      'Describe electrolysis and predict electrode products',
+      'Apply Faraday''s laws of electrolysis: m = (M × I × t) / (n × F)',
+      'Calculate the quantity of substance deposited or gas evolved during electrolysis',
+      'Relate standard cell potential to Gibbs energy: ΔG° = −nFE°cell'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 3.3 — Electron sharing reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Electron sharing reactions',
+    'Reactivity 3.3',
+    20,
+    4,
+    'medium',
+    ARRAY[
+      'Confusing the three stages of radical chain reactions (initiation, propagation, termination)',
+      'Forgetting that UV light is required to initiate radical halogenation',
+      'Incomplete explanation of ozone depletion (not mentioning the catalytic cycle of Cl radicals)'
+    ],
+    ARRAY[
+      'Describe homolytic bond fission as producing two radicals, each with one electron from the shared pair',
+      'Describe the mechanism of radical substitution in alkanes: initiation (UV light produces radicals), propagation (two steps), termination (three possible steps)',
+      'Explain the role of chlorofluorocarbons (CFCs) in the catalytic destruction of stratospheric ozone',
+      'Write equations for the catalytic cycle of ozone depletion by chlorine radicals: Cl• + O₃ and ClO• + O'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Electron sharing reactions',
+    'Reactivity 3.3',
+    21,
+    4,
+    'medium',
+    ARRAY[
+      'Confusing the three stages of radical chain reactions',
+      'Forgetting that UV light is required to initiate radical halogenation',
+      'Incomplete explanation of ozone depletion mechanism',
+      'Not distinguishing between NOx and CFC contributions to ozone depletion'
+    ],
+    ARRAY[
+      'Describe homolytic bond fission and the formation of radicals',
+      'Describe the mechanism of radical substitution in alkanes (initiation, propagation, termination)',
+      'Explain the role of CFCs in the catalytic destruction of stratospheric ozone',
+      'Write equations for the catalytic cycle of ozone depletion by chlorine radicals',
+      'Explain the role of nitrogen oxides (NOx) from aircraft as additional catalysts for ozone depletion',
+      'Describe the formation of photochemical smog from NOx and volatile organic compounds (VOCs) under sunlight'
+    ]
+  );
+
+
+  -- ============================================================
+  -- REACTIVITY 3.4 — Electron pair sharing reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Electron pair sharing reactions',
+    'Reactivity 3.4',
+    21,
+    5,
+    'medium',
+    ARRAY[
+      'Confusing nucleophiles (electron-pair donors) with electrophiles (electron-pair acceptors)',
+      'Writing incorrect products for nucleophilic substitution (wrong nucleophile attacks wrong carbon)',
+      'Confusing electrophilic addition to alkenes with substitution reactions of alkanes',
+      'Forgetting that condensation reactions produce a small molecule (usually water) as a by-product'
+    ],
+    ARRAY[
+      'Define nucleophiles as electron-pair donors and electrophiles as electron-pair acceptors',
+      'Describe nucleophilic substitution reactions of halogenoalkanes with nucleophiles: OH⁻ (hydrolysis), CN⁻ (nitrile formation) and NH₃ (amine formation)',
+      'Describe electrophilic addition reactions of alkenes: with HBr (Markovnikov''s rule), Br₂ (test for unsaturation) and H₂O (acid-catalysed hydration)',
+      'Describe the formation of polyesters and polyamides as condensation polymers',
+      'Describe the acid and base hydrolysis of esters and amides'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Electron pair sharing reactions',
+    'Reactivity 3.4',
+    22,
+    5,
+    'hard',
+    ARRAY[
+      'Confusing nucleophiles with electrophiles',
+      'Mixing up SN1 and SN2 conditions (primary/secondary/tertiary substrate, solvent polarity)',
+      'Not drawing curly arrows from electron-rich to electron-poor sites in mechanisms',
+      'Incorrectly applying Markovnikov''s rule'
+    ],
+    ARRAY[
+      'Define nucleophiles and electrophiles',
+      'Describe nucleophilic substitution reactions of halogenoalkanes with OH⁻, CN⁻ and NH₃',
+      'Describe electrophilic addition reactions of alkenes with HBr, Br₂ and H₂O',
+      'Describe the formation and hydrolysis of condensation polymers (polyesters and polyamides)',
+      'Compare SN1 and SN2 mechanisms: substrate type, stereochemistry, rate equation and conditions that favour each',
+      'Draw the full mechanism for SN1 (carbocation intermediate, racemisation) and SN2 (backside attack, inversion of configuration) with curly arrows',
+      'Describe electrophilic aromatic substitution: nitration of benzene (mechanism with NO₂⁺ electrophile) and Friedel-Crafts alkylation/acylation'
+    ]
+  );
+
+END $$;
