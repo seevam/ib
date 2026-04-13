@@ -1013,4 +1013,61 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 3.1 — Proton transfer reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Proton transfer reactions',
+    'Reactivity 3.1',
+    18,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing strong/weak acids with concentrated/dilute',
+      'Incorrect identification of conjugate acid-base pairs',
+      'pH calculation errors: forgetting to take the negative log or using wrong formula for bases',
+      'Not recognising that a weak acid only partially dissociates'
+    ],
+    ARRAY[
+      'Define acids and bases according to the Brønsted-Lowry theory (proton donors and acceptors)',
+      'Identify conjugate acid-base pairs in proton transfer reactions',
+      'Explain the autoionisation of water: H₂O(l) ⇌ H⁺(aq) + OH⁻(aq), Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25 °C',
+      'Define pH = −log[H⁺] and calculate pH of strong acids and strong bases',
+      'Distinguish between strong and weak acids/bases in terms of degree of dissociation',
+      'Explain the action of a buffer solution and calculate the pH change when small amounts of acid or base are added'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Proton transfer reactions',
+    'Reactivity 3.1',
+    19,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing strong/weak acids with concentrated/dilute',
+      'Incorrect identification of conjugate acid-base pairs',
+      'Errors in weak acid pH calculations (forgetting to use Ka properly)',
+      'Applying Henderson-Hasselbalch equation outside its valid range'
+    ],
+    ARRAY[
+      'Define acids and bases according to Brønsted-Lowry theory and identify conjugate pairs',
+      'Explain the autoionisation of water and define Kw',
+      'Define pH = −log[H⁺] and calculate pH of strong acids and strong bases',
+      'Distinguish between strong and weak acids/bases in terms of degree of dissociation and Ka/Kb values',
+      'Calculate the pH of weak acid solutions using Ka and the approximation method',
+      'Apply the Henderson-Hasselbalch equation to calculate buffer pH: pH = pKa + log([A⁻]/[HA])',
+      'Calculate the pH of a buffer solution after addition of small amounts of strong acid or base',
+      'Explain the relationship between Ka and Kb for a conjugate pair: Ka × Kb = Kw'
+    ]
+  );
+
 END $$;
