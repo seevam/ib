@@ -473,4 +473,58 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 2.4 — From models to materials
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'From models to materials',
+    'Structure 2.4',
+    9,
+    4,
+    'medium',
+    ARRAY[
+      'Incorrectly classifying network covalent solids (e.g. SiO₂) as molecular',
+      'Confusing intermolecular forces with intramolecular bonds when comparing structures',
+      'Not distinguishing allotropes from isotopes'
+    ],
+    ARRAY[
+      'Classify substances as ionic, metallic, covalent molecular or covalent network based on their properties',
+      'Explain the relationship between structure, bonding type and physical properties (melting point, conductivity, solubility)',
+      'Describe the giant covalent (network) structures of diamond, graphite and silicon dioxide and explain their properties',
+      'Define allotropes as different structural forms of the same element',
+      'Describe the allotropes of carbon: diamond, graphite, C₆₀ fullerene and graphene, and relate their structures to their properties'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'From models to materials',
+    'Structure 2.4',
+    9,
+    4,
+    'medium',
+    ARRAY[
+      'Incorrectly classifying network covalent solids (e.g. SiO₂) as molecular',
+      'Confusing intermolecular forces with intramolecular bonds when comparing structures',
+      'Not distinguishing allotropes from isotopes',
+      'Vague descriptions of how nanostructure properties differ from bulk material properties'
+    ],
+    ARRAY[
+      'Classify substances as ionic, metallic, covalent molecular or covalent network based on their properties',
+      'Explain the relationship between structure, bonding type and physical properties (melting point, conductivity, solubility)',
+      'Describe the giant covalent (network) structures of diamond, graphite and silicon dioxide and explain their properties',
+      'Define allotropes as different structural forms of the same element',
+      'Describe the allotropes of carbon: diamond, graphite, C₆₀ fullerene and graphene, and relate their structures to their properties',
+      'Explain how the properties of nanoparticles (e.g. large surface area to volume ratio) differ from bulk materials',
+      'Describe the structure and properties of polymers as an example of engineered covalent materials'
+    ]
+  );
+
 END $$;
