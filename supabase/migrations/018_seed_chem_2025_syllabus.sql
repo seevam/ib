@@ -421,4 +421,56 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 2.3 — The metallic model
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The metallic model',
+    'Structure 2.3',
+    8,
+    4,
+    'easy',
+    ARRAY[
+      'Describing metallic bonding without explicitly mentioning delocalised electrons',
+      'Confusing metallic properties with ionic properties',
+      'Not explaining why metals are malleable in terms of the bonding model'
+    ],
+    ARRAY[
+      'Describe metallic bonding as the electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons',
+      'Explain the physical properties of metals (electrical conductivity, thermal conductivity, malleability, ductility, high melting point) using the metallic bonding model',
+      'Explain why metals are good conductors of electricity in terms of delocalised electrons',
+      'Describe alloys as mixtures of metals and explain how alloying changes properties such as hardness and melting point'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The metallic model',
+    'Structure 2.3',
+    8,
+    4,
+    'medium',
+    ARRAY[
+      'Describing metallic bonding without explicitly mentioning delocalised electrons',
+      'Confusing metallic properties with ionic properties',
+      'Not explaining why metals are malleable in terms of the bonding model',
+      'Confusing conductors, semiconductors and insulators in band theory'
+    ],
+    ARRAY[
+      'Describe metallic bonding as the electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons',
+      'Explain the physical properties of metals (electrical conductivity, thermal conductivity, malleability, ductility, high melting point) using the metallic bonding model',
+      'Explain why metals are good conductors of electricity in terms of delocalised electrons',
+      'Describe alloys as mixtures of metals and explain how alloying changes properties such as hardness and melting point',
+      'Describe band theory: the formation of valence bands and conduction bands from atomic orbitals',
+      'Distinguish between electrical conductors, semiconductors and insulators using band theory'
+    ]
+  );
+
 END $$;
