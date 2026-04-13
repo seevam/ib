@@ -1181,4 +1181,59 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 3.4 — Electron pair sharing reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Electron pair sharing reactions',
+    'Reactivity 3.4',
+    21,
+    5,
+    'medium',
+    ARRAY[
+      'Confusing nucleophiles (electron-pair donors) with electrophiles (electron-pair acceptors)',
+      'Writing incorrect products for nucleophilic substitution (wrong nucleophile attacks wrong carbon)',
+      'Confusing electrophilic addition to alkenes with substitution reactions of alkanes',
+      'Forgetting that condensation reactions produce a small molecule (usually water) as a by-product'
+    ],
+    ARRAY[
+      'Define nucleophiles as electron-pair donors and electrophiles as electron-pair acceptors',
+      'Describe nucleophilic substitution reactions of halogenoalkanes with nucleophiles: OH⁻ (hydrolysis), CN⁻ (nitrile formation) and NH₃ (amine formation)',
+      'Describe electrophilic addition reactions of alkenes: with HBr (Markovnikov''s rule), Br₂ (test for unsaturation) and H₂O (acid-catalysed hydration)',
+      'Describe the formation of polyesters and polyamides as condensation polymers',
+      'Describe the acid and base hydrolysis of esters and amides'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Electron pair sharing reactions',
+    'Reactivity 3.4',
+    22,
+    5,
+    'hard',
+    ARRAY[
+      'Confusing nucleophiles with electrophiles',
+      'Mixing up SN1 and SN2 conditions (primary/secondary/tertiary substrate, solvent polarity)',
+      'Not drawing curly arrows from electron-rich to electron-poor sites in mechanisms',
+      'Incorrectly applying Markovnikov''s rule'
+    ],
+    ARRAY[
+      'Define nucleophiles and electrophiles',
+      'Describe nucleophilic substitution reactions of halogenoalkanes with OH⁻, CN⁻ and NH₃',
+      'Describe electrophilic addition reactions of alkenes with HBr, Br₂ and H₂O',
+      'Describe the formation and hydrolysis of condensation polymers (polyesters and polyamides)',
+      'Compare SN1 and SN2 mechanisms: substrate type, stereochemistry, rate equation and conditions that favour each',
+      'Draw the full mechanism for SN1 (carbocation intermediate, racemisation) and SN2 (backside attack, inversion of configuration) with curly arrows',
+      'Describe electrophilic aromatic substitution: nitration of benzene (mechanism with NO₂⁺ electrophile) and Friedel-Crafts alkylation/acylation'
+    ]
+  );
+
 END $$;
