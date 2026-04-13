@@ -812,4 +812,33 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 1.4 — Entropy and spontaneity (HL extension — HL only)
+  -- ============================================================
+
+  -- HL only (no SL insert)
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Entropy and spontaneity (HL extension)',
+    'Reactivity 1.4',
+    15,
+    4,
+    'hard',
+    ARRAY[
+      'Confusing ΔG° (standard conditions) with ΔG (non-standard conditions)',
+      'Sign errors when relating ΔG° = −nFE°cell',
+      'Forgetting that K > 1 implies ΔG° < 0 (forward reaction favoured at standard conditions)',
+      'Not recognising that ΔG° = 0 means K = 1, not that the reaction doesn''t occur'
+    ],
+    ARRAY[
+      'Derive and apply the relationship ΔG° = −RT ln K to calculate K from ΔG° or vice versa',
+      'Explain that when ΔG° < 0, K > 1 and the forward reaction is favoured at standard conditions',
+      'Derive and apply the relationship ΔG° = −nFE°cell linking Gibbs energy to standard cell potential',
+      'Calculate standard cell potential from ΔG° or calculate ΔG° from E°cell',
+      'Explain how temperature affects both K and ΔG° for a given reaction'
+    ]
+  );
+
 END $$;
