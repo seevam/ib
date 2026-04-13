@@ -756,4 +756,60 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 1.3 — Entropy and spontaneity
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Entropy and spontaneity',
+    'Reactivity 1.3',
+    14,
+    5,
+    'hard',
+    ARRAY[
+      'Forgetting to use Kelvin (not Celsius) in ΔG = ΔH − TΔS',
+      'Confusing spontaneous with fast — a spontaneous reaction can still be very slow',
+      'Incorrectly predicting entropy change direction (e.g. gas dissolution always decreases entropy of gas)',
+      'Not considering both ΔH and TΔS when determining spontaneity at different temperatures'
+    ],
+    ARRAY[
+      'Define entropy (S) as a measure of the dispersal of energy or matter at the molecular level',
+      'Predict and explain entropy changes for physical changes (melting, vaporisation) and chemical reactions',
+      'State that the entropy of a system increases when: number of moles of gas increases, a solid dissolves, temperature increases',
+      'Define Gibbs free energy change: ΔG = ΔH − TΔS',
+      'Use the sign of ΔG to predict whether a reaction is spontaneous (ΔG < 0), non-spontaneous (ΔG > 0) or at equilibrium (ΔG = 0)',
+      'Analyse the four combinations of ΔH and ΔS signs to determine temperature dependence of spontaneity'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Entropy and spontaneity',
+    'Reactivity 1.3',
+    14,
+    5,
+    'hard',
+    ARRAY[
+      'Forgetting to use Kelvin in ΔG = ΔH − TΔS',
+      'Confusing spontaneous with fast',
+      'Incorrectly predicting entropy change direction',
+      'Confusing standard Gibbs free energy ΔG° with ΔG under non-standard conditions'
+    ],
+    ARRAY[
+      'Define entropy (S) as a measure of the dispersal of energy or matter at the molecular level',
+      'Predict and explain entropy changes for physical and chemical processes',
+      'Define Gibbs free energy change: ΔG = ΔH − TΔS',
+      'Use the sign of ΔG to predict spontaneity',
+      'Analyse the four combinations of ΔH and ΔS signs to determine temperature dependence of spontaneity',
+      'Explain the relationship between ΔG° and the equilibrium constant K using ΔG° = −RT ln K',
+      'Calculate K from ΔG° or ΔG° from K at a given temperature'
+    ]
+  );
+
 END $$;
