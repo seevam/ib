@@ -841,4 +841,60 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 2.1 — How much? The amount of chemical change
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'How much? The amount of chemical change',
+    'Reactivity 2.1',
+    15,
+    7,
+    'medium',
+    ARRAY[
+      'Failing to identify the limiting reagent before calculating yield',
+      'Confusing theoretical yield with actual yield in percentage yield calculations',
+      'Titration calculation errors: not multiplying by volume in dm³',
+      'Forgetting to account for stoichiometric ratios when calculating moles in reactions'
+    ],
+    ARRAY[
+      'Write and balance full and ionic chemical equations including state symbols',
+      'Identify the limiting reagent in a reaction and use it to calculate theoretical yield',
+      'Calculate percentage yield: (actual yield / theoretical yield) × 100%',
+      'Calculate atom economy: (molar mass of desired product / total molar mass of all products) × 100%',
+      'Solve titration calculations to determine the concentration or volume of a solution',
+      'Calculate the concentration of a solution in mol dm⁻³',
+      'Perform multi-step stoichiometric calculations involving solution chemistry'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'How much? The amount of chemical change',
+    'Reactivity 2.1',
+    16,
+    7,
+    'medium',
+    ARRAY[
+      'Failing to identify the limiting reagent before calculating yield',
+      'Confusing theoretical yield with actual yield in percentage yield calculations',
+      'Titration calculation errors: not multiplying by volume in dm³',
+      'Errors in back-titration calculations (not accounting for excess reagent)'
+    ],
+    ARRAY[
+      'Write and balance full and ionic chemical equations including state symbols',
+      'Identify the limiting reagent and calculate theoretical yield',
+      'Calculate percentage yield and atom economy',
+      'Solve titration calculations to determine concentration or volume',
+      'Perform back-titration calculations to determine the amount of substance that cannot be titrated directly',
+      'Solve multi-step stoichiometric calculations, including those involving volumetric analysis'
+    ]
+  );
+
 END $$;
