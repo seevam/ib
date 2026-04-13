@@ -301,4 +301,62 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 2.1 — The ionic model
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The ionic model',
+    'Structure 2.1',
+    6,
+    5,
+    'medium',
+    ARRAY[
+      'Mixing up cation and anion charges for transition metals',
+      'Forgetting that ionic compounds must be overall charge-neutral',
+      'Confusing ionic radius trends with atomic radius trends',
+      'Incorrectly assigning oxidation states in polyatomic ions'
+    ],
+    ARRAY[
+      'Describe ionic bonding as the electrostatic attraction between oppositely charged ions formed by electron transfer',
+      'Predict the charges of ions formed by s- and p-block elements from their position in the periodic table',
+      'Explain the relationship between ionic charge, ionic radius and the strength of the ionic lattice',
+      'Explain the properties of ionic compounds: high melting and boiling points, brittleness, electrical conductivity when molten or dissolved',
+      'Write correct formulas for ionic compounds using ion charges to achieve overall charge neutrality',
+      'Define oxidation state and assign oxidation states to elements in compounds and ions',
+      'Describe the structure of ionic compounds as a three-dimensional lattice of alternating cations and anions'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The ionic model',
+    'Structure 2.1',
+    6,
+    5,
+    'medium',
+    ARRAY[
+      'Mixing up cation and anion charges for transition metals',
+      'Forgetting that ionic compounds must be overall charge-neutral',
+      'Direction errors in Born-Haber cycles (endothermic vs exothermic steps)',
+      'Confusing lattice enthalpy of formation with lattice enthalpy of dissociation'
+    ],
+    ARRAY[
+      'Describe ionic bonding as the electrostatic attraction between oppositely charged ions formed by electron transfer',
+      'Predict the charges of ions formed by s- and p-block elements from their position in the periodic table',
+      'Explain the relationship between ionic charge, ionic radius and the strength of the ionic lattice',
+      'Explain the properties of ionic compounds: high melting and boiling points, brittleness, electrical conductivity when molten or dissolved',
+      'Write correct formulas for ionic compounds using ion charges to achieve overall charge neutrality',
+      'Define oxidation state and assign oxidation states to elements in compounds and ions',
+      'Construct a Born-Haber cycle for a Group 1 or Group 2 ionic compound and use it to calculate lattice enthalpy',
+      'Explain trends in lattice enthalpies in terms of ionic charge and ionic radius'
+    ]
+  );
+
 END $$;
