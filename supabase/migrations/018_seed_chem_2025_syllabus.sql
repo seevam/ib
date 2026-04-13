@@ -586,4 +586,62 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 3.2 — Functional group chemistry
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Functional group chemistry',
+    'Structure 3.2',
+    11,
+    6,
+    'medium',
+    ARRAY[
+      'IUPAC naming errors (wrong parent chain, incorrect numbering)',
+      'Misidentifying the oxidation product of a primary versus secondary alcohol',
+      'Confusing addition reactions (alkenes) with substitution reactions (alkanes)',
+      'Writing incorrect ester products or reversing the condensation reaction'
+    ],
+    ARRAY[
+      'Identify and name functional groups: alkyl halide, alcohol, aldehyde, ketone, carboxylic acid, ester, amine and amide',
+      'Apply IUPAC rules to name and draw structural formulas for organic compounds containing these functional groups',
+      'Describe the nucleophilic substitution of halogenoalkanes with aqueous NaOH, KCN and NH₃',
+      'Describe the oxidation of primary alcohols to aldehydes and carboxylic acids, and secondary alcohols to ketones',
+      'Describe the formation of esters by condensation of carboxylic acids with alcohols (esterification)',
+      'Distinguish between addition, substitution, elimination and condensation reaction types'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Functional group chemistry',
+    'Structure 3.2',
+    11,
+    6,
+    'hard',
+    ARRAY[
+      'IUPAC naming errors (wrong parent chain, incorrect numbering)',
+      'Confusing SN1 and SN2 conditions (substrate, solvent, nucleophile strength)',
+      'Not drawing curly arrows correctly in reaction mechanisms',
+      'Misidentifying chiral centres or drawing incorrect enantiomers'
+    ],
+    ARRAY[
+      'Identify and name functional groups: alkyl halide, alcohol, aldehyde, ketone, carboxylic acid, ester, amine and amide',
+      'Apply IUPAC rules to name and draw structural formulas for organic compounds containing these functional groups',
+      'Describe the nucleophilic substitution of halogenoalkanes with aqueous NaOH, KCN and NH₃',
+      'Describe the oxidation of primary and secondary alcohols',
+      'Describe the formation of esters by condensation of carboxylic acids with alcohols',
+      'Distinguish between addition, substitution, elimination and condensation reaction types',
+      'Explain the SN1 and SN2 mechanisms for nucleophilic substitution, including the factors that favour each pathway',
+      'Describe optical isomerism: identify chiral centres and draw enantiomers',
+      'Use curly arrow notation to represent the movement of electron pairs in organic reaction mechanisms'
+    ]
+  );
+
 END $$;
