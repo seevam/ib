@@ -702,4 +702,58 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 1.2 — Energy cycles in reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Energy cycles in reactions',
+    'Reactivity 1.2',
+    13,
+    5,
+    'medium',
+    ARRAY[
+      'Sign errors when reversing an equation in a Hess''s law cycle',
+      'Forgetting to multiply ΔH by stoichiometric coefficients when scaling equations',
+      'Confusing which direction is exothermic in a Hess cycle diagram'
+    ],
+    ARRAY[
+      'Construct energy cycles (Hess''s law diagrams) to calculate enthalpy changes for reactions',
+      'Calculate ΔH°rxn using: ΔH°rxn = Σ ΔH°f(products) − Σ ΔH°f(reactants)',
+      'Apply Hess''s law by combining thermochemical equations algebraically, reversing and scaling as needed',
+      'Calculate enthalpy changes from average bond enthalpies: ΔH = Σ(bonds broken) − Σ(bonds formed)',
+      'Explain why bond enthalpy calculations give approximate values compared to experimentally determined values'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Energy cycles in reactions',
+    'Reactivity 1.2',
+    13,
+    5,
+    'hard',
+    ARRAY[
+      'Sign errors when reversing an equation in a Hess''s law or Born-Haber cycle',
+      'Forgetting to multiply ΔH by stoichiometric coefficients when scaling equations',
+      'Confusing lattice enthalpy of formation with lattice enthalpy of dissociation',
+      'Incorrect direction of electron affinity step in Born-Haber cycle'
+    ],
+    ARRAY[
+      'Construct energy cycles (Hess''s law diagrams) to calculate enthalpy changes for reactions',
+      'Calculate ΔH°rxn using: ΔH°rxn = Σ ΔH°f(products) − Σ ΔH°f(reactants)',
+      'Apply Hess''s law by combining thermochemical equations algebraically',
+      'Calculate enthalpy changes from average bond enthalpies',
+      'Construct a Born-Haber cycle for an ionic compound and use it to calculate lattice enthalpy or electron affinity',
+      'Identify and explain the steps in a Born-Haber cycle: atomisation, ionisation, electron affinity, formation enthalpy and lattice enthalpy',
+      'Explain trends in lattice enthalpies in terms of ionic charge and radius'
+    ]
+  );
+
 END $$;
