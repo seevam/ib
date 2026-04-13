@@ -897,4 +897,62 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 2.2 — How fast? The rate of chemical change
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'How fast? The rate of chemical change',
+    'Reactivity 2.2',
+    16,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing rate constant k with rate of reaction',
+      'Misidentifying reaction order from concentration–time graphs versus rate–concentration graphs',
+      'Drawing energy profiles with the catalyst pathway going below the reactant energy level',
+      'Stating that catalysts are consumed in the reaction'
+    ],
+    ARRAY[
+      'Define rate of reaction and describe methods to measure it (gas volume, mass loss, colorimetry, titration)',
+      'Explain collision theory: reactions occur when particles collide with sufficient energy (≥ Ea) and correct orientation',
+      'Explain the effect of concentration, temperature, surface area and catalysts on reaction rate using collision theory',
+      'Describe activation energy (Ea) and sketch and interpret energy profiles for catalysed and uncatalysed reactions',
+      'Deduce the rate equation (rate = k[A]^m[B]^n) and reaction orders from experimental data',
+      'Explain the role of catalysts in providing an alternative reaction pathway with lower activation energy',
+      'Distinguish between homogeneous and heterogeneous catalysis with examples'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'How fast? The rate of chemical change',
+    'Reactivity 2.2',
+    17,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing rate constant k with rate of reaction',
+      'Errors in applying the Arrhenius equation (using wrong units or not converting to Kelvin)',
+      'Incorrectly identifying the rate-determining step in a multi-step mechanism',
+      'Not checking that the proposed mechanism is consistent with the experimental rate equation'
+    ],
+    ARRAY[
+      'Define rate of reaction and describe methods to measure it',
+      'Explain collision theory and the effect of reaction conditions on rate',
+      'Describe activation energy and interpret energy profiles',
+      'Deduce rate equations and reaction orders from experimental data',
+      'Apply the Arrhenius equation: k = Ae^(−Ea/RT) to calculate Ea or k at different temperatures',
+      'Use the linear form ln k = ln A − Ea/RT and a graph of ln k vs 1/T to determine Ea',
+      'Describe reaction mechanisms as a sequence of elementary steps and identify the rate-determining step',
+      'Verify that a proposed mechanism is consistent with the experimental rate equation'
+    ]
+  );
+
 END $$;
