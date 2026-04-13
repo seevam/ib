@@ -1129,4 +1129,56 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 3.3 — Electron sharing reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Electron sharing reactions',
+    'Reactivity 3.3',
+    20,
+    4,
+    'medium',
+    ARRAY[
+      'Confusing the three stages of radical chain reactions (initiation, propagation, termination)',
+      'Forgetting that UV light is required to initiate radical halogenation',
+      'Incomplete explanation of ozone depletion (not mentioning the catalytic cycle of Cl radicals)'
+    ],
+    ARRAY[
+      'Describe homolytic bond fission as producing two radicals, each with one electron from the shared pair',
+      'Describe the mechanism of radical substitution in alkanes: initiation (UV light produces radicals), propagation (two steps), termination (three possible steps)',
+      'Explain the role of chlorofluorocarbons (CFCs) in the catalytic destruction of stratospheric ozone',
+      'Write equations for the catalytic cycle of ozone depletion by chlorine radicals: Cl• + O₃ and ClO• + O'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Electron sharing reactions',
+    'Reactivity 3.3',
+    21,
+    4,
+    'medium',
+    ARRAY[
+      'Confusing the three stages of radical chain reactions',
+      'Forgetting that UV light is required to initiate radical halogenation',
+      'Incomplete explanation of ozone depletion mechanism',
+      'Not distinguishing between NOx and CFC contributions to ozone depletion'
+    ],
+    ARRAY[
+      'Describe homolytic bond fission and the formation of radicals',
+      'Describe the mechanism of radical substitution in alkanes (initiation, propagation, termination)',
+      'Explain the role of CFCs in the catalytic destruction of stratospheric ozone',
+      'Write equations for the catalytic cycle of ozone depletion by chlorine radicals',
+      'Explain the role of nitrogen oxides (NOx) from aircraft as additional catalysts for ozone depletion',
+      'Describe the formation of photochemical smog from NOx and volatile organic compounds (VOCs) under sunlight'
+    ]
+  );
+
 END $$;
