@@ -359,4 +359,66 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 2.2 — The covalent model
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The covalent model',
+    'Structure 2.2',
+    7,
+    7,
+    'medium',
+    ARRAY[
+      'Drawing Lewis structures with incorrect electron counts',
+      'Applying VSEPR incorrectly when lone pairs are present on the central atom',
+      'Confusing bond polarity with overall molecular polarity',
+      'Forgetting that a molecule with polar bonds can still be non-polar due to symmetry'
+    ],
+    ARRAY[
+      'Describe covalent bonding as the sharing of one or more electron pairs between non-metal atoms',
+      'Draw Lewis (electron dot) structures for molecules and polyatomic ions, including those with expanded octets',
+      'Apply VSEPR theory to predict the electron domain geometry and molecular geometry for species with 2–6 electron domains',
+      'Predict and explain bond angles in molecules and ions using VSEPR',
+      'Define electronegativity and use Pauling values to predict bond polarity',
+      'Distinguish between polar and non-polar bonds, and between polar and non-polar molecules',
+      'Differentiate between sigma (σ) bonds (end-on overlap) and pi (π) bonds (sideways overlap)',
+      'Relate the number of bonds between two atoms to bond length and bond strength'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The covalent model',
+    'Structure 2.2',
+    7,
+    7,
+    'hard',
+    ARRAY[
+      'Drawing Lewis structures with incorrect electron counts',
+      'Applying VSEPR incorrectly when lone pairs are present on the central atom',
+      'Confusing bond polarity with overall molecular polarity',
+      'Incorrectly assigning hybridisation — forgetting that triple bonds involve sp hybridisation',
+      'Not recognising delocalisation in resonance structures'
+    ],
+    ARRAY[
+      'Describe covalent bonding as the sharing of one or more electron pairs between non-metal atoms',
+      'Draw Lewis (electron dot) structures for molecules and polyatomic ions, including those with expanded octets',
+      'Apply VSEPR theory to predict the electron domain geometry and molecular geometry for species with 2–6 electron domains',
+      'Predict and explain bond angles in molecules and ions using VSEPR',
+      'Define electronegativity and use Pauling values to predict bond polarity',
+      'Distinguish between polar and non-polar bonds, and between polar and non-polar molecules',
+      'Differentiate between sigma (σ) bonds and pi (π) bonds',
+      'Relate the number of bonds between two atoms to bond length and bond strength',
+      'Describe sp³, sp² and sp hybridisation and relate hybridisation to molecular geometry',
+      'Explain delocalisation of electrons in molecules such as benzene and the carbonate ion using resonance structures'
+    ]
+  );
+
 END $$;
