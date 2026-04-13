@@ -527,4 +527,63 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 3.1 — The periodic table: classification of elements
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The periodic table—classification of elements',
+    'Structure 3.1',
+    10,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing the trend in atomic radius across a period (decreases) with down a group (increases)',
+      'Forgetting the two anomalies in first ionisation energy (groups 2→13 and 15→16)',
+      'Incorrectly stating that all transition metals form coloured compounds',
+      'Omitting variable oxidation states when describing transition metal properties'
+    ],
+    ARRAY[
+      'Describe the arrangement of the periodic table into periods, groups and s, p, d blocks',
+      'Explain the periodic trend in atomic radius across a period (decreases) and down a group (increases)',
+      'Explain the trend in first ionisation energy across a period and down a group',
+      'Explain the anomalies in first ionisation energy between groups 2 and 13, and between groups 15 and 16',
+      'Explain the trend in electronegativity across a period and down a group',
+      'Describe the reactions of Group 1 alkali metals with water and oxygen',
+      'Describe the trend in reactivity of Group 17 halogens and explain displacement reactions',
+      'List the characteristic properties of transition metals: variable oxidation states, formation of coloured ions, catalytic behaviour and complex ion formation'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The periodic table—classification of elements',
+    'Structure 3.1',
+    10,
+    6,
+    'hard',
+    ARRAY[
+      'Confusing the trend in atomic radius across a period (decreases) with down a group (increases)',
+      'Forgetting the two anomalies in first ionisation energy',
+      'Not explaining d-orbital splitting when discussing transition metal colour',
+      'Vague explanations of periodic trends without reference to nuclear charge and shielding'
+    ],
+    ARRAY[
+      'Describe the arrangement of the periodic table into periods, groups and s, p, d blocks',
+      'Explain periodic trends in atomic radius, first ionisation energy and electronegativity in terms of nuclear charge, shielding and distance',
+      'Explain the anomalies in first ionisation energy between groups 2 and 13, and between groups 15 and 16',
+      'Describe the reactions of Group 1 alkali metals with water and oxygen',
+      'Describe the trend in reactivity of Group 17 halogens and explain displacement reactions',
+      'List the characteristic properties of transition metals: variable oxidation states, formation of coloured ions, catalytic behaviour and complex ion formation',
+      'Explain the colour of transition metal compounds in terms of d-orbital splitting and absorption of visible light',
+      'Explain the reactions of Period 3 oxides with water and classify the resulting solutions as acidic, basic or amphoteric'
+    ]
+  );
+
 END $$;
