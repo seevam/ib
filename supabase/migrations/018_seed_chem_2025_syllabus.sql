@@ -183,4 +183,63 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 1.4 — Counting particles by mass: the mole
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Counting particles by mass: the mole',
+    'Structure 1.4',
+    4,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing empirical formula with molecular formula',
+      'Forgetting to divide by Avogadro''s constant when converting moles to number of particles',
+      'Arithmetic errors when calculating molar mass of compounds',
+      'Not simplifying the empirical formula to the lowest whole-number ratio'
+    ],
+    ARRAY[
+      'Define the mole as the amount of substance containing the same number of particles as there are atoms in exactly 12 g of carbon-12',
+      'State the value of Avogadro''s constant: Nₐ = 6.02 × 10²³ mol⁻¹',
+      'Interconvert between amount in moles, mass and molar mass using n = m / M',
+      'Interconvert between amount in moles and number of particles using N = n × Nₐ',
+      'Determine the empirical formula of a compound from percentage composition or experimental data',
+      'Determine the molecular formula from the empirical formula and the molar mass',
+      'Calculate the percentage composition by mass of a compound from its formula'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Counting particles by mass: the mole',
+    'Structure 1.4',
+    4,
+    6,
+    'medium',
+    ARRAY[
+      'Confusing empirical formula with molecular formula',
+      'Forgetting to divide by Avogadro''s constant when converting moles to number of particles',
+      'Arithmetic errors when calculating molar mass of compounds',
+      'Not simplifying the empirical formula to the lowest whole-number ratio',
+      'Errors in combustion analysis calculations (not accounting for all atoms)'
+    ],
+    ARRAY[
+      'Define the mole as the amount of substance containing the same number of particles as there are atoms in exactly 12 g of carbon-12',
+      'State the value of Avogadro''s constant: Nₐ = 6.02 × 10²³ mol⁻¹',
+      'Interconvert between amount in moles, mass and molar mass using n = m / M',
+      'Interconvert between amount in moles and number of particles using N = n × Nₐ',
+      'Determine the empirical formula of a compound from percentage composition or experimental data',
+      'Determine the molecular formula from the empirical formula and the molar mass',
+      'Calculate the percentage composition by mass of a compound from its formula',
+      'Determine empirical and molecular formulas from combustion analysis data (mass of CO₂ and H₂O produced)'
+    ]
+  );
+
 END $$;
