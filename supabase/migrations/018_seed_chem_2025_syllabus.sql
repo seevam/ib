@@ -1070,4 +1070,63 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 3.2 — Electron transfer reactions
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Electron transfer reactions',
+    'Reactivity 3.2',
+    19,
+    6,
+    'hard',
+    ARRAY[
+      'Incorrect oxidation state assignments leading to wrong half-equations',
+      'Forgetting to balance charge in half-equations (using H⁺ or OH⁻ and H₂O)',
+      'Confusing cathode and anode in electrolytic vs galvanic cells',
+      'Incorrect sign for E°cell (subtracting in the wrong order)'
+    ],
+    ARRAY[
+      'Define oxidation as loss of electrons and reduction as gain of electrons (OIL RIG)',
+      'Assign oxidation states to atoms in compounds and ions using oxidation state rules',
+      'Write and balance half-equations for oxidation and reduction',
+      'Combine half-equations to write balanced overall redox equations',
+      'Describe the standard hydrogen electrode (SHE) and define standard electrode potential E°',
+      'Calculate standard cell potential: E°cell = E°cathode − E°anode',
+      'Predict the direction of spontaneous electron flow in a galvanic cell using E° values',
+      'Describe electrolysis and predict the products at each electrode for molten and aqueous electrolytes'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Electron transfer reactions',
+    'Reactivity 3.2',
+    20,
+    6,
+    'hard',
+    ARRAY[
+      'Incorrect oxidation state assignments leading to wrong half-equations',
+      'Forgetting to balance charge in half-equations',
+      'Confusing cathode and anode in electrolytic vs galvanic cells',
+      'Errors in Faraday''s law calculations (using wrong charge per mole or wrong valence)'
+    ],
+    ARRAY[
+      'Define oxidation and reduction in terms of electron transfer and assign oxidation states',
+      'Write and balance half-equations and overall redox equations',
+      'Describe the standard hydrogen electrode and define standard electrode potential',
+      'Calculate standard cell potential and predict spontaneity using E°cell',
+      'Describe electrolysis and predict electrode products',
+      'Apply Faraday''s laws of electrolysis: m = (M × I × t) / (n × F)',
+      'Calculate the quantity of substance deposited or gas evolved during electrolysis',
+      'Relate standard cell potential to Gibbs energy: ΔG° = −nFE°cell'
+    ]
+  );
+
 END $$;
