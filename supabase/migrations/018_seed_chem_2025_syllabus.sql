@@ -955,4 +955,62 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 2.3 — How far? The extent of chemical change
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'How far? The extent of chemical change',
+    'Reactivity 2.3',
+    17,
+    6,
+    'hard',
+    ARRAY[
+      'Including solids or pure liquids in Kc expressions',
+      'Applying Le Chatelier''s principle incorrectly for pressure changes when moles of gas are equal on both sides',
+      'ICE table errors: incorrect initial concentrations or algebraic mistakes',
+      'Confusing Kc with the reaction quotient Q'
+    ],
+    ARRAY[
+      'Define dynamic equilibrium as a state where the forward and reverse reaction rates are equal and concentrations remain constant in a closed system',
+      'Write the equilibrium constant expression Kc for homogeneous reactions',
+      'Interpret the magnitude of Kc: large Kc favours products, small Kc favours reactants',
+      'Apply Le Chatelier''s principle to predict the effect of changes in concentration, temperature and pressure on equilibrium position',
+      'Explain the effect of a catalyst on equilibrium: reaches equilibrium faster but does not change the equilibrium position or Kc',
+      'Perform equilibrium calculations using ICE (initial, change, equilibrium) tables',
+      'Describe the Haber process and the contact process as industrial applications of equilibrium principles'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'How far? The extent of chemical change',
+    'Reactivity 2.3',
+    18,
+    6,
+    'hard',
+    ARRAY[
+      'Including solids or pure liquids in Kc or Kp expressions',
+      'Applying Le Chatelier''s principle incorrectly for pressure changes',
+      'ICE table errors in equilibrium calculations',
+      'Errors in the relationship Kp = Kc(RT)^Δn'
+    ],
+    ARRAY[
+      'Define dynamic equilibrium and write Kc expressions for homogeneous reactions',
+      'Interpret the magnitude of Kc',
+      'Apply Le Chatelier''s principle to predict equilibrium shifts',
+      'Perform equilibrium calculations using ICE tables',
+      'Write Kp expressions for gaseous equilibria and solve Kp calculations',
+      'Interconvert between Kc and Kp using Kp = Kc(RT)^Δn',
+      'Write equilibrium expressions for heterogeneous equilibria (excluding pure solids and liquids)',
+      'Relate Kc to ΔG° using ΔG° = −RT ln K'
+    ]
+  );
+
 END $$;
