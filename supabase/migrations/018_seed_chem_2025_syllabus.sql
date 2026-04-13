@@ -242,4 +242,63 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 1.5 — Ideal gases
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Ideal gases',
+    'Structure 1.5',
+    5,
+    5,
+    'medium',
+    ARRAY[
+      'Using Celsius instead of Kelvin in gas law calculations',
+      'Forgetting to convert pressure units to Pa when using R = 8.314 J K⁻¹ mol⁻¹',
+      'Misidentifying which variables are constant when applying individual gas laws',
+      'Not stating standard conditions correctly (STP: 0 °C, 100 kPa)'
+    ],
+    ARRAY[
+      'State the assumptions of the ideal gas model: point particles, no intermolecular forces, elastic collisions',
+      'Apply Boyle''s law (P ∝ 1/V at constant T and n) to solve problems',
+      'Apply Charles'' law (V ∝ T at constant P and n) to solve problems',
+      'Apply Avogadro''s law (V ∝ n at constant T and P) to solve problems',
+      'Solve problems using the ideal gas law: PV = nRT',
+      'State and use the molar volume of an ideal gas at STP (0 °C, 100 kPa) = 22.7 L mol⁻¹',
+      'Convert between Celsius and Kelvin: T(K) = T(°C) + 273'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Ideal gases',
+    'Structure 1.5',
+    5,
+    5,
+    'medium',
+    ARRAY[
+      'Using Celsius instead of Kelvin in gas law calculations',
+      'Forgetting to convert pressure units to Pa when using R = 8.314 J K⁻¹ mol⁻¹',
+      'Misidentifying which variables are constant when applying individual gas laws',
+      'Incorrectly predicting when real gases deviate most from ideal behaviour'
+    ],
+    ARRAY[
+      'State the assumptions of the ideal gas model: point particles, no intermolecular forces, elastic collisions',
+      'Apply Boyle''s law (P ∝ 1/V at constant T and n) to solve problems',
+      'Apply Charles'' law (V ∝ T at constant P and n) to solve problems',
+      'Apply Avogadro''s law (V ∝ n at constant T and P) to solve problems',
+      'Solve problems using the ideal gas law: PV = nRT',
+      'State and use the molar volume of an ideal gas at STP (0 °C, 100 kPa) = 22.7 L mol⁻¹',
+      'Convert between Celsius and Kelvin: T(K) = T(°C) + 273',
+      'Explain why real gases deviate from ideal behaviour at high pressure and low temperature',
+      'Explain deviations in terms of non-negligible particle volume and intermolecular attractive forces'
+    ]
+  );
+
 END $$;
