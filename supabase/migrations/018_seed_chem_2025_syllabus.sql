@@ -644,4 +644,62 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- REACTIVITY 1.1 — Measuring enthalpy changes
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'Measuring enthalpy changes',
+    'Reactivity 1.1',
+    12,
+    6,
+    'medium',
+    ARRAY[
+      'Using the wrong sign convention (forgetting exothermic has negative ΔH)',
+      'Using the wrong specific heat capacity (using water''s value for solutions of different composition)',
+      'Not accounting for heat loss in open calorimetry experiments',
+      'Confusing standard enthalpy of combustion with standard enthalpy of formation'
+    ],
+    ARRAY[
+      'Define enthalpy change (ΔH) and distinguish between exothermic (ΔH < 0) and endothermic (ΔH > 0) reactions',
+      'Calculate the heat change using q = mcΔT and convert to molar enthalpy change',
+      'Define standard enthalpy of combustion (ΔH°c) as the enthalpy change when one mole of substance burns completely under standard conditions',
+      'Define standard enthalpy of formation (ΔH°f) as the enthalpy change when one mole of compound is formed from its elements in their standard states',
+      'Apply Hess''s law to calculate enthalpy changes that cannot be measured directly',
+      'Calculate enthalpy changes from mean bond enthalpies (bonds broken minus bonds formed)',
+      'Explain why bond enthalpy values are averages and why they differ from actual values'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'Measuring enthalpy changes',
+    'Reactivity 1.1',
+    12,
+    6,
+    'medium',
+    ARRAY[
+      'Using the wrong sign convention (forgetting exothermic has negative ΔH)',
+      'Using the wrong specific heat capacity in calorimetry calculations',
+      'Not accounting for heat loss in open calorimetry experiments',
+      'Confusing standard enthalpy of combustion with standard enthalpy of formation',
+      'Errors in determining the calorimeter constant'
+    ],
+    ARRAY[
+      'Define enthalpy change (ΔH) and distinguish between exothermic (ΔH < 0) and endothermic (ΔH > 0) reactions',
+      'Calculate the heat change using q = mcΔT and convert to molar enthalpy change',
+      'Define standard enthalpy of combustion (ΔH°c) and standard enthalpy of formation (ΔH°f)',
+      'Apply Hess''s law to calculate enthalpy changes that cannot be measured directly',
+      'Calculate enthalpy changes from mean bond enthalpies and explain discrepancies with experimental values',
+      'Describe the use of a bomb calorimeter to measure enthalpy of combustion',
+      'Calculate the calorimeter constant and use it to correct experimental enthalpy values'
+    ]
+  );
+
 END $$;
