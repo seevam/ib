@@ -69,4 +69,60 @@ BEGIN
     ]
   );
 
+
+  -- ============================================================
+  -- STRUCTURE 1.2 — The nuclear atom
+  -- ============================================================
+
+  -- SL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_sl_id,
+    'The nuclear atom',
+    'Structure 1.2',
+    2,
+    5,
+    'easy',
+    ARRAY[
+      'Confusing mass number with atomic number',
+      'Forgetting that isotopes have the same atomic number but different mass numbers',
+      'Incorrectly calculating relative atomic mass from isotopic abundance data',
+      'Not appreciating that electrons have negligible mass'
+    ],
+    ARRAY[
+      'Describe the structure of the atom: a dense, positively charged nucleus containing protons and neutrons, surrounded by electrons',
+      'Define atomic number (Z) as the number of protons, and mass number (A) as the total number of protons and neutrons',
+      'Define isotopes as atoms of the same element with the same atomic number but different mass numbers',
+      'Describe how a mass spectrometer is used to determine the relative atomic mass of an element from its isotopic abundances',
+      'Calculate relative atomic mass from isotopic abundance and mass data'
+    ]
+  );
+
+  -- HL
+  INSERT INTO topics (subject_id, name, sub_topic, order_index, weightage, difficulty_level, common_weaknesses, syllabus_points)
+  VALUES (
+    chem_hl_id,
+    'The nuclear atom',
+    'Structure 1.2',
+    2,
+    5,
+    'easy',
+    ARRAY[
+      'Confusing mass number with atomic number',
+      'Forgetting that isotopes have the same atomic number but different mass numbers',
+      'Incorrectly calculating relative atomic mass from isotopic abundance data',
+      'Not appreciating that electrons have negligible mass',
+      'Errors in writing nuclear equations for radioactive decay'
+    ],
+    ARRAY[
+      'Describe the structure of the atom: a dense, positively charged nucleus containing protons and neutrons, surrounded by electrons',
+      'Define atomic number (Z) as the number of protons, and mass number (A) as the total number of protons and neutrons',
+      'Define isotopes as atoms of the same element with the same atomic number but different mass numbers',
+      'Describe how a mass spectrometer is used to determine the relative atomic mass of an element from its isotopic abundances',
+      'Calculate relative atomic mass from isotopic abundance and mass data',
+      'Describe the types of radioactive decay: alpha (α), beta-minus (β⁻) and gamma (γ)',
+      'Write and balance nuclear equations for radioactive decay, applying conservation of mass number and atomic number'
+    ]
+  );
+
 END $$;
